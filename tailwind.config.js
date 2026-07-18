@@ -8,37 +8,37 @@ export default {
     extend: {
       colors: {
         brand: {
-          50:  '#EEF6E8',   // Light Green
-          100: '#D4EBBC',
-          200: '#B5D98A',
-          400: '#8BBF68',
-          600: '#6A994E',   // Primary Green
-          800: '#4A7035',   // Dark Green
-          900: '#2E2E2E',   // Dark Gray
+          50:  '#EBF3FF',   // Light Blue
+          100: '#C5DCFF',
+          200: '#9DC4FF',
+          400: '#5CA3FF',
+          600: '#1A6FD4',   // Primary Blue (dari gambar)
+          800: '#0D4FA3',   // Dark Blue
+          900: '#0A3570',   // Darkest Blue
         },
         success: {
-          50:  '#EEF6E8',
-          500: '#6A994E',
-          800: '#4A7035',
+          50:  '#E8F5E9',
+          500: '#43A047',
+          800: '#2E7D32',
         },
         warning: {
-          50:  '#FEF3E8',
-          500: '#F4A261',   // Warning Orange
-          800: '#C4743A',
+          50:  '#FFF8E1',
+          500: '#FFB300',
+          800: '#F57F17',
         },
         danger: {
           50:  '#FDECEA',
-          500: '#E76F51',   // Danger Red
-          800: '#B84E36',
+          500: '#E53935',
+          800: '#B71C1C',
         },
         info: {
-          50:  '#EBF3FF',
-          500: '#3A86FF',   // Info Blue
-          800: '#1A5FCC',
+          50:  '#E3F2FD',
+          500: '#1E88E5',
+          800: '#1565C0',
         },
         surface: {
-          DEFAULT: '#F7F7F5', // Light Gray background
-          dark:    '#2E2E2E', // Dark Gray text
+          DEFAULT: '#F0F6FF',  // Light blue-tinted background
+          dark:    '#1A2B4A',  // Dark navy text
         },
       },
       fontFamily: {
@@ -52,8 +52,8 @@ export default {
         xl: '1280px',
       },
       boxShadow: {
-        card: '0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04)',
-        'card-hover': '0 4px 12px rgba(106,153,78,.12)',
+        card:       '0 1px 3px rgba(26,111,212,.08), 0 1px 2px rgba(26,111,212,.04)',
+        'card-hover': '0 4px 16px rgba(26,111,212,.15)',
       },
       keyframes: {
         fadeIn: {

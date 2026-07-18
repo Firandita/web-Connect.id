@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{c as o,a as e,o as r}from"./index-BYUa20Zh.js";const a={};function c(s,n){return r(),o("div",null,[...n[0]||(n[0]=[e("h1",null,"Tentang Connect.id",-1),e("p",null,"Informasi tentang Connect.id...",-1)])])}const f=t(a,[["render",c]]);export{f as default};
