@@ -16,7 +16,7 @@
             dengan Investor Tepat
           </h1>
           <p class="hero-desc">
-            InvestJatim mempertemukan pelaku UMKM Jawa Timur dengan investor melalui 
+            Connect.id mempertemukan pelaku UMKM Jawa Timur dengan investor melalui 
             dashboard data bisnis yang transparan dan terverifikasi.
           </p>
           <div class="hero-actions">
@@ -185,7 +185,7 @@
     <section class="cta-section">
       <div class="cta-inner">
         <span class="material-symbols-rounded cta-icon">rocket_launch</span>
-        <h2 class="cta-title">Siap Bergabung dengan InvestJatim?</h2>
+        <h2 class="cta-title">Siap Bergabung dengan Connect.id?</h2>
         <p class="cta-desc">Daftarkan diri kamu sekarang — gratis untuk UMKM, investor, dan mentor.</p>
         <div class="cta-actions">
           <router-link to="/daftar" class="cta-btn-primary">Daftar Sekarang</router-link>

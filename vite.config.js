@@ -13,5 +13,5 @@ export default defineConfig({
       }
     }
   ],
-  base: '/InvestJatim/',
+  base: '/web-Connect.id/',
 })

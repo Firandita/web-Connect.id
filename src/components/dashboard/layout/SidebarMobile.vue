@@ -7,7 +7,7 @@
         <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
           <span class="material-icons text-white" style="font-size:18px">trending_up</span>
         </div>
-        <span class="font-bold text-brand-800">InvestJatim</span>
+        <span class="font-bold text-brand-800">Connect.id</span>
       </div>
       <button @click="ui.closeMobileMenu()" class="p-1.5 rounded-lg hover:bg-gray-100">
         <span class="material-icons text-gray-500">close</span>

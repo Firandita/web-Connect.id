@@ -4,7 +4,7 @@
     <!-- Header -->
     <div>
       <h1 class="text-xl font-bold text-gray-800">Overview Platform</h1>
-      <p class="text-sm text-gray-400 mt-0.5">Pantau aktivitas dan kesehatan platform InvestJatim</p>
+      <p class="text-sm text-gray-400 mt-0.5">Pantau aktivitas dan kesehatan platform Connect.id</p>
     </div>
 
     <!-- Metric Cards -->

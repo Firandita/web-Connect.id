@@ -4,7 +4,7 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <span class="material-symbols-rounded">trending_up</span>
-          <span>Invest<strong>Jatim</strong></span>
+          <span>Connect.<strong id="footer-logo-text">id</strong></span>
         </div>
         <p class="footer-tagline">Platform komunikasi investasi UMKM Jawa Timur berbasis data.</p>
       </div>
@@ -32,14 +32,14 @@
       <div class="footer-links-group">
         <h4>Kontak</h4>
         <ul>
-          <li><span>investjatim@example.com</span></li>
+          <li><span>connect.id@example.com</span></li>
           <li><span>Surabaya, Jawa Timur</span></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 InvestJatim. Prototipe untuk keperluan lomba.</p>
+      <p>© 2026 Connect.id. Prototipe untuk keperluan lomba.</p>
     </div>
   </footer>
 </template>

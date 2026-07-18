@@ -14,7 +14,7 @@
       <div class="w-7 h-7 rounded-md bg-brand-600 flex items-center justify-center">
         <span class="material-symbols-rounded text-white" style="font-size:15px">trending_up</span>
       </div>
-      <span class="font-bold text-brand-800 text-sm">InvestJatim</span>
+      <span class="font-bold text-brand-800 text-sm">Connect.id</span>
     </RouterLink>
 
     <!-- Page title (desktop) -->

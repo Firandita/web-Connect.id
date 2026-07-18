@@ -4,7 +4,7 @@
       <div class="login-left-content">
         <div class="brand">
           <span class="material-symbols-rounded brand-icon">trending_up</span>
-          <span class="brand-name">Invest<strong>Jatim</strong></span>
+          <span class="brand-name"><strong>Connect.id</strong></span>
         </div>
         <h1 class="left-title">Platform Investasi UMKM Jawa Timur</h1>
         <p class="left-desc">Hubungkan bisnis potensial dengan investor yang tepat melalui dashboard data yang transparan dan terverifikasi.</p>
@@ -101,7 +101,7 @@ const roles = [
 const mockUsers = {
   umkm:       { nama: 'Batik Arjuna', email: 'umkm@demo.com' },
   investor:   { nama: 'Budi Santoso', email: 'investor@demo.com' },
-  admin:      { nama: 'Admin InvestJatim', email: 'admin@demo.com' },
+  admin:      { nama: 'Admin Connect.id', email: 'admin@demo.com' },
   pemerintah: { nama: 'Dinas Koperasi Jatim', email: 'dinas@demo.com' },
   mentor:     { nama: 'Mentor Andi', email: 'mentor@demo.com' },
 }
