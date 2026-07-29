@@ -6,7 +6,7 @@
           <span class="material-symbols-rounded brand-icon">trending_up</span>
           <span class="brand-name"><strong>Connect.id</strong></span>
         </div>
-        <h1 class="left-title">Platform Investasi UMKM Jawa Timur</h1>
+        <h1 class="left-title">Platform Investasi UMKM Indonesia</h1>
         <p class="left-desc">Hubungkan bisnis potensial dengan investor yang tepat melalui dashboard data yang transparan dan terverifikasi.</p>
         <div class="left-stats">
           <div class="left-stat">
@@ -30,7 +30,7 @@
         <!-- Logo mobile only -->
         <div class="brand brand-mobile">
           <span class="material-symbols-rounded brand-icon">trending_up</span>
-          <span class="brand-name">Invest<strong>Jatim</strong></span>
+          <span class="brand-name">Connect<strong>.id</strong></span>
         </div>
 
         <h2 class="login-title">Masuk ke Akun</h2>
@@ -102,7 +102,7 @@ const mockUsers = {
   umkm:       { nama: 'Batik Arjuna', email: 'umkm@demo.com' },
   investor:   { nama: 'Budi Santoso', email: 'investor@demo.com' },
   admin:      { nama: 'Admin Connect.id', email: 'admin@demo.com' },
-  pemerintah: { nama: 'Dinas Koperasi Jatim', email: 'dinas@demo.com' },
+  pemerintah: { nama: 'Dinas Koperasi Provinsi Jawa Timur', email: 'dinas@demo.com' },
   mentor:     { nama: 'Mentor Andi', email: 'mentor@demo.com' },
 }
 
@@ -127,7 +127,7 @@ async function handleLogin() {
 /* LEFT PANEL */
 .login-left {
   flex: 1;
-  background: linear-gradient(145deg, #4a7535 0%, #6A994E 60%, #7aaa5a 100%);
+  background: linear-gradient(145deg, #101B4D 0%, #1F5FE0 60%, #4E92F5 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,7 +158,7 @@ async function handleLogin() {
 }
 
 .brand-name strong {
-  color: #c8ddb8;
+  color: #A8CFFC;
 }
 
 .left-title {
@@ -222,9 +222,9 @@ async function handleLogin() {
   margin-bottom: 1.5rem;
 }
 
-.brand-mobile .brand-icon { color: #6A994E; }
+.brand-mobile .brand-icon { color: #1F5FE0; }
 .brand-mobile .brand-name { color: #2E2E2E; }
-.brand-mobile .brand-name strong { color: #6A994E; }
+.brand-mobile .brand-name strong { color: #1F5FE0; }
 
 .login-title {
   font-size: 1.5rem;
@@ -262,13 +262,13 @@ async function handleLogin() {
 }
 
 .role-btn:hover {
-  border-color: #6A994E;
-  background: #EEF6E8;
+  border-color: #1F5FE0;
+  background: #EAF3FF;
 }
 
 .role-btn-active {
-  border-color: #6A994E;
-  background: #EEF6E8;
+  border-color: #1F5FE0;
+  background: #EAF3FF;
 }
 
 .role-icon {
@@ -277,7 +277,7 @@ async function handleLogin() {
 }
 
 .role-btn-active .role-icon {
-  color: #6A994E;
+  color: #1F5FE0;
 }
 
 .role-label {
@@ -288,7 +288,7 @@ async function handleLogin() {
 }
 
 .role-btn-active .role-label {
-  color: #6A994E;
+  color: #1F5FE0;
 }
 
 /* Form */
@@ -337,7 +337,7 @@ async function handleLogin() {
 }
 
 .login-link {
-  color: #6A994E;
+  color: #1F5FE0;
   font-weight: 600;
   text-decoration: none;
 }

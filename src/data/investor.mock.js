@@ -1,5 +1,5 @@
 /**
- * Data Mock Investor (InvestJatim)
+ * Data Mock Investor (Connect.id)
  * Digunakan untuk menyuplai data riwayat minat investasi, 
  * kotak masuk penawaran di sisi UMKM, dan manajemen verifikasi KTP/Instansi.
  */

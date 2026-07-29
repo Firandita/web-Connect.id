@@ -14,9 +14,9 @@
           :class="['btn-secondary']"
           :style="{
             fontSize:'0.78rem', padding:'0.4rem 0.85rem',
-            background: selectedSektor === s.value ? '#6A994E' : 'white',
-            color: selectedSektor === s.value ? 'white' : '#6A994E',
-            borderColor: '#6A994E'
+            background: selectedSektor === s.value ? '#1F5FE0' : 'white',
+            color: selectedSektor === s.value ? 'white' : '#1F5FE0',
+            borderColor: '#1F5FE0'
           }"
         >{{ s.label }}</button>
       </div>
@@ -46,7 +46,7 @@
             <div style="height:8px;background:#e8e8e4;border-radius:99px;overflow:hidden">
               <div :style="{
                 width: (sub.omzet / currentSektor.maxOmzet * 100) + '%',
-                height: '100%', background: '#6A994E', borderRadius: '99px', transition: 'width 0.5s'
+                height: '100%', background: '#1F5FE0', borderRadius: '99px', transition: 'width 0.5s'
               }"></div>
             </div>
           </div>
@@ -61,7 +61,7 @@
                style="padding:0.875rem;background:#F7F7F5;border-radius:0.75rem">
             <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem">
               <span style="font-size:0.82rem;font-weight:600;color:#2E2E2E">{{ sub.name }}</span>
-              <span style="font-size:0.75rem;color:#6A994E;font-weight:600">{{ sub.investor }} investor</span>
+              <span style="font-size:0.75rem;color:#1F5FE0;font-weight:600">{{ sub.investor }} investor</span>
             </div>
             <div style="display:flex;gap:0.5rem;align-items:center">
               <span style="font-size:0.7rem;color:#777;width:60px">Modal</span>
@@ -87,7 +87,7 @@
             <span style="font-size:0.72rem;color:#777;font-weight:600">{{ item.jumlah }}</span>
             <div :style="{
               width:'100%', borderRadius:'6px 6px 0 0',
-              background: i === currentSektor.tren.length-1 ? '#6A994E' : '#c8ddb8',
+              background: i === currentSektor.tren.length-1 ? '#1F5FE0' : '#A8CFFC',
               height: (item.jumlah / Math.max(...currentSektor.tren.map(t=>t.jumlah)) * 120) + 'px',
               transition: 'height 0.5s'
             }"></div>
@@ -101,8 +101,8 @@
         <h3 style="font-weight:700;color:#2E2E2E;margin-bottom:1rem">Rekomendasi Kebijakan</h3>
         <div style="display:flex;flex-direction:column;gap:0.75rem">
           <div v-for="rek in currentSektor.rekomendasi" :key="rek"
-               style="display:flex;align-items:flex-start;gap:0.6rem;padding:0.75rem;background:#EEF6E8;border-radius:0.75rem">
-            <span class="material-symbols-rounded" style="font-size:1rem;color:#6A994E;flex-shrink:0;margin-top:0.1rem">lightbulb</span>
+               style="display:flex;align-items:flex-start;gap:0.6rem;padding:0.75rem;background:#EAF3FF;border-radius:0.75rem">
+            <span class="material-symbols-rounded" style="font-size:1rem;color:#1F5FE0;flex-shrink:0;margin-top:0.1rem">lightbulb</span>
             <p style="font-size:0.78rem;color:#2E2E2E;line-height:1.5">{{ rek }}</p>
           </div>
         </div>
@@ -128,7 +128,7 @@
                 style="border-bottom:1px solid #F7F7F5">
               <td style="padding:0.875rem 0.75rem;font-weight:600;color:#2E2E2E">{{ u.nama }}</td>
               <td style="padding:0.875rem 0.75rem;color:#555">{{ u.kabupaten }}</td>
-              <td style="padding:0.875rem 0.75rem;text-align:right;color:#6A994E;font-weight:700">{{ u.omzet }}</td>
+              <td style="padding:0.875rem 0.75rem;text-align:right;color:#1F5FE0;font-weight:700">{{ u.omzet }}</td>
               <td style="padding:0.875rem 0.75rem;text-align:right;color:#F4A261;font-weight:700">{{ u.modal }}</td>
               <td style="padding:0.875rem 0.75rem;text-align:center">
                 <span class="badge-verified" v-if="u.verified">
@@ -165,10 +165,10 @@ const sektorDatabase = {
   kuliner: {
     label: 'Kuliner',
     kpis: [
-      { icon: 'store',    label: 'Total UMKM Kuliner',   value: '4.820', color: '#6A994E' },
+      { icon: 'store',    label: 'Total UMKM Kuliner',   value: '4.820', color: '#1F5FE0' },
       { icon: 'payments', label: 'Rata-rata Omzet/Bln',  value: 'Rp 18Jt', color: '#F4A261' },
       { icon: 'groups',   label: 'Investor Tertarik',    value: '312',   color: '#3A86FF' },
-      { icon: 'trending_up', label: 'Pertumbuhan YoY',  value: '+24%',  color: '#6A994E' },
+      { icon: 'trending_up', label: 'Pertumbuhan YoY',  value: '+24%',  color: '#1F5FE0' },
     ],
     subsektor: [
       { name: 'Makanan Ringan',  omzet: 22, modal: 35, investor: 87 },
@@ -198,10 +198,10 @@ const sektorDatabase = {
   fashion: {
     label: 'Fashion',
     kpis: [
-      { icon: 'store',       label: 'Total UMKM Fashion',  value: '2.150', color: '#6A994E' },
+      { icon: 'store',       label: 'Total UMKM Fashion',  value: '2.150', color: '#1F5FE0' },
       { icon: 'payments',    label: 'Rata-rata Omzet/Bln', value: 'Rp 42Jt', color: '#F4A261' },
       { icon: 'groups',      label: 'Investor Tertarik',   value: '198',   color: '#3A86FF' },
-      { icon: 'trending_up', label: 'Pertumbuhan YoY',    value: '+19%',  color: '#6A994E' },
+      { icon: 'trending_up', label: 'Pertumbuhan YoY',    value: '+19%',  color: '#1F5FE0' },
     ],
     subsektor: [
       { name: 'Batik & Tenun',   omzet: 62, modal: 120, investor: 95 },
@@ -228,10 +228,10 @@ const sektorDatabase = {
   pertanian: {
     label: 'Pertanian',
     kpis: [
-      { icon: 'store',       label: 'Total UMKM Pertanian', value: '1.890', color: '#6A994E' },
+      { icon: 'store',       label: 'Total UMKM Pertanian', value: '1.890', color: '#1F5FE0' },
       { icon: 'payments',    label: 'Rata-rata Omzet/Bln',  value: 'Rp 25Jt', color: '#F4A261' },
       { icon: 'groups',      label: 'Investor Tertarik',    value: '143',   color: '#3A86FF' },
-      { icon: 'trending_up', label: 'Pertumbuhan YoY',     value: '+12%',  color: '#6A994E' },
+      { icon: 'trending_up', label: 'Pertumbuhan YoY',     value: '+12%',  color: '#1F5FE0' },
     ],
     subsektor: [
       { name: 'Hortikultura',  omzet: 28, modal: 50,  investor: 55 },
@@ -258,10 +258,10 @@ const sektorDatabase = {
   manufaktur: {
     label: 'Manufaktur',
     kpis: [
-      { icon: 'store',       label: 'Total UMKM Manufaktur', value: '1.340', color: '#6A994E' },
+      { icon: 'store',       label: 'Total UMKM Manufaktur', value: '1.340', color: '#1F5FE0' },
       { icon: 'payments',    label: 'Rata-rata Omzet/Bln',   value: 'Rp 65Jt', color: '#F4A261' },
       { icon: 'groups',      label: 'Investor Tertarik',     value: '210',   color: '#3A86FF' },
-      { icon: 'trending_up', label: 'Pertumbuhan YoY',      value: '+28%',  color: '#6A994E' },
+      { icon: 'trending_up', label: 'Pertumbuhan YoY',      value: '+28%',  color: '#1F5FE0' },
     ],
     subsektor: [
       { name: 'Furnitur & Kayu',  omzet: 72, modal: 150, investor: 88 },

@@ -8,37 +8,37 @@ export default {
     extend: {
       colors: {
         brand: {
-          50:  '#EBF3FF',   // Light Blue
-          100: '#C5DCFF',
-          200: '#9DC4FF',
-          400: '#5CA3FF',
-          600: '#1A6FD4',   // Primary Blue (dari gambar)
-          800: '#0D4FA3',   // Dark Blue
-          900: '#0A3570',   // Darkest Blue
+          50:  '#EAF3FF',   // Icy Light Blue
+          100: '#D3E7FE',
+          200: '#A8CFFC',
+          400: '#4E92F5',
+          600: '#1F5FE0',   // Primary Blue
+          800: '#16307A',   // Deep Navy
+          900: '#101B4D',   // Darkest Indigo-Navy
         },
         success: {
-          50:  '#E8F5E9',
-          500: '#43A047',
-          800: '#2E7D32',
+          50:  '#EEF6E8',
+          500: '#6A994E',
+          800: '#4A7035',
         },
         warning: {
-          50:  '#FFF8E1',
-          500: '#FFB300',
-          800: '#F57F17',
+          50:  '#FEF3E8',
+          500: '#F4A261',   // Warning Orange
+          800: '#C4743A',
         },
         danger: {
           50:  '#FDECEA',
-          500: '#E53935',
-          800: '#B71C1C',
+          500: '#E76F51',   // Danger Red
+          800: '#B84E36',
         },
         info: {
-          50:  '#E3F2FD',
-          500: '#1E88E5',
-          800: '#1565C0',
+          50:  '#E6FBFF',
+          500: '#22B8E8',   // Info Cyan
+          800: '#0E7A9E',
         },
         surface: {
-          DEFAULT: '#F0F6FF',  // Light blue-tinted background
-          dark:    '#1A2B4A',  // Dark navy text
+          DEFAULT: '#F7F7F5', // Light Gray background
+          dark:    '#2E2E2E', // Dark Gray text
         },
       },
       fontFamily: {
@@ -52,8 +52,8 @@ export default {
         xl: '1280px',
       },
       boxShadow: {
-        card:       '0 1px 3px rgba(26,111,212,.08), 0 1px 2px rgba(26,111,212,.04)',
-        'card-hover': '0 4px 16px rgba(26,111,212,.15)',
+        card: '0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04)',
+        'card-hover': '0 4px 12px rgba(31,95,224,.12)',
       },
       keyframes: {
         fadeIn: {

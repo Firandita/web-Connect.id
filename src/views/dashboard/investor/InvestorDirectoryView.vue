@@ -3,7 +3,7 @@
 
     <!-- Header -->
     <div>
-      <h1 class="text-xl font-bold text-gray-800">Direktori UMKM Jawa Timur</h1>
+      <h1 class="text-xl font-bold text-gray-800">Direktori UMKM Indonesia</h1>
       <p class="text-sm text-gray-400 mt-0.5">
         {{ filteredList.length }} UMKM ditemukan
       </p>
@@ -150,7 +150,7 @@
                   <span
                     class="font-bold"
                     :style="{
-                      color: umkm.readinessScore >= 80 ? '#6A994E' :
+                      color: umkm.readinessScore >= 80 ? '#1F5FE0' :
                              umkm.readinessScore >= 60 ? '#F4A261' : '#E76F51'
                     }"
                   >{{ umkm.readinessScore }}/100</span>
@@ -159,7 +159,7 @@
                   <div
                     :style="{
                       width: umkm.readinessScore + '%',
-                      background: umkm.readinessScore >= 80 ? '#6A994E' :
+                      background: umkm.readinessScore >= 80 ? '#1F5FE0' :
                                   umkm.readinessScore >= 60 ? '#F4A261' : '#E76F51',
                       height: '100%', borderRadius: '99px'
                     }"
@@ -194,7 +194,7 @@
         <div v-else class="text-center py-16">
           <span
             class="material-symbols-rounded block mb-3"
-            style="font-size:56px; color:#D4EBBC"
+            style="font-size:56px; color:#D3E7FE"
           >search_off</span>
           <p class="font-semibold text-gray-500">Tidak ada UMKM yang cocok</p>
           <p class="text-sm text-gray-400 mt-1">Coba ubah atau reset filter</p>

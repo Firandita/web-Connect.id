@@ -8,7 +8,7 @@
           Selamat datang, {{ auth.user?.nama }}
         </h1>
         <p class="text-sm text-gray-400 mt-0.5">
-          Temukan UMKM Jawa Timur yang potensial untuk investasi Anda
+          Temukan UMKM potensial dari berbagai provinsi untuk investasi Anda
         </p>
       </div>
       <RouterLink to="/dashboard/investor/direktori" class="btn-primary whitespace-nowrap">
@@ -153,7 +153,7 @@
       <div class="flex items-center justify-between mb-4">
         <div>
           <h3 class="font-bold text-gray-800">Rekomendasi untuk Anda</h3>
-          <p class="text-xs text-gray-400 mt-0.5">UMKM dengan readiness score tertinggi di Jawa Timur</p>
+          <p class="text-xs text-gray-400 mt-0.5">UMKM dengan readiness score tertinggi se-Indonesia</p>
         </div>
         <RouterLink to="/dashboard/investor/direktori" class="btn-secondary text-xs px-3 py-1.5">
           Lihat Semua

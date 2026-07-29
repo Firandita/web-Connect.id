@@ -1,5 +1,5 @@
 /**
- * Data Mock Sektor Usaha (SinergiUMKM Jatim)
+ * Data Mock Sektor Usaha (Connect.id)
  * Digunakan untuk klasifikasi usaha, filter pencarian direktori,
  * serta data analitik visual pada panel pemerintah/investor.
  */

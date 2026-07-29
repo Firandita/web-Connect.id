@@ -41,7 +41,7 @@
       <div class="card p-5 lg:col-span-2">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
           <h3 style="font-weight:700;color:#2E2E2E">Pertumbuhan UMKM Terdaftar (2026)</h3>
-          <span style="font-size:0.75rem;background:#EEF6E8;color:#6A994E;padding:0.2rem 0.75rem;border-radius:99px;font-weight:600">+18% YoY</span>
+          <span style="font-size:0.75rem;background:#EAF3FF;color:#1F5FE0;padding:0.2rem 0.75rem;border-radius:99px;font-weight:600">+18% YoY</span>
         </div>
         <div style="display:flex;align-items:flex-end;gap:0.4rem;height:140px">
           <div v-for="(val, i) in growthData" :key="i"
@@ -49,7 +49,7 @@
             <span style="font-size:0.65rem;color:#777">{{ val }}</span>
             <div :style="{
               width:'100%', borderRadius:'4px 4px 0 0',
-              background: i === growthData.length-1 ? '#6A994E' : '#c8ddb8',
+              background: i === growthData.length-1 ? '#1F5FE0' : '#A8CFFC',
               height: (val / Math.max(...growthData) * 110) + 'px',
               transition: 'height 0.5s'
             }"></div>
@@ -65,13 +65,13 @@
           <div v-for="s in sektorData" :key="s.name">
             <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem">
               <span style="color:#555;display:flex;align-items:center;gap:0.4rem">
-                <span class="material-symbols-rounded" style="font-size:1rem;color:#6A994E">{{ s.icon }}</span>
+                <span class="material-symbols-rounded" style="font-size:1rem;color:#1F5FE0">{{ s.icon }}</span>
                 {{ s.name }}
               </span>
               <span style="font-weight:700;color:#2E2E2E">{{ s.pct }}%</span>
             </div>
             <div style="height:6px;background:#e8e8e4;border-radius:99px;overflow:hidden">
-              <div :style="{ width: s.pct+'%', height:'100%', background:'#6A994E', borderRadius:'99px' }"></div>
+              <div :style="{ width: s.pct+'%', height:'100%', background:'#1F5FE0', borderRadius:'99px' }"></div>
             </div>
           </div>
         </div>
@@ -89,17 +89,17 @@
                style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;border-radius:0.75rem;background:#F7F7F5">
             <div :style="{
               width:'28px', height:'28px', borderRadius:'50%', flexShrink:0,
-              background: i === 0 ? '#6A994E' : i === 1 ? '#8ab86e' : '#c8ddb8',
+              background: i === 0 ? '#1F5FE0' : i === 1 ? '#4E92F5' : '#A8CFFC',
               color:'white', display:'flex', alignItems:'center', justifyContent:'center',
               fontWeight:800, fontSize:'0.8rem'
             }">{{ i + 1 }}</div>
             <div style="flex:1">
               <div style="font-size:0.875rem;font-weight:600;color:#2E2E2E">{{ kota.nama }}</div>
               <div style="height:4px;background:#e8e8e4;border-radius:99px;margin-top:0.3rem;overflow:hidden">
-                <div :style="{ width: (kota.jumlah/topKota[0].jumlah*100)+'%', height:'100%', background:'#6A994E', borderRadius:'99px' }"></div>
+                <div :style="{ width: (kota.jumlah/topKota[0].jumlah*100)+'%', height:'100%', background:'#1F5FE0', borderRadius:'99px' }"></div>
               </div>
             </div>
-            <span style="font-size:0.875rem;font-weight:700;color:#6A994E;flex-shrink:0">{{ kota.jumlah.toLocaleString('id-ID') }}</span>
+            <span style="font-size:0.875rem;font-weight:700;color:#1F5FE0;flex-shrink:0">{{ kota.jumlah.toLocaleString('id-ID') }}</span>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@
         <div style="display:flex;flex-direction:column;gap:0.5rem">
           <div v-for="a in aktivitas" :key="a.text"
                style="display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0;border-bottom:1px solid #f0f0ee">
-            <span class="material-symbols-rounded" style="font-size:1rem;color:#6A994E;flex-shrink:0">{{ a.icon }}</span>
+            <span class="material-symbols-rounded" style="font-size:1rem;color:#1F5FE0;flex-shrink:0">{{ a.icon }}</span>
             <div style="flex:1">
               <p style="font-size:0.8rem;color:#2E2E2E">{{ a.text }}</p>
               <p style="font-size:0.7rem;color:#aaa">{{ a.waktu }}</p>
@@ -137,9 +137,9 @@
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
       <router-link v-for="link in quickLinks" :key="link.to" :to="link.to"
         style="display:flex;align-items:center;gap:1rem;padding:1.25rem;border-radius:1rem;background:white;border:1px solid #e8e8e4;text-decoration:none;transition:all 0.2s"
-        @mouseenter="e => e.currentTarget.style.borderColor='#6A994E'"
+        @mouseenter="e => e.currentTarget.style.borderColor='#1F5FE0'"
         @mouseleave="e => e.currentTarget.style.borderColor='#e8e8e4'">
-        <span class="material-symbols-rounded" style="font-size:1.75rem;color:#6A994E;background:#EEF6E8;padding:0.5rem;border-radius:0.6rem">{{ link.icon }}</span>
+        <span class="material-symbols-rounded" style="font-size:1.75rem;color:#1F5FE0;background:#EAF3FF;padding:0.5rem;border-radius:0.6rem">{{ link.icon }}</span>
         <div>
           <div style="font-weight:700;font-size:0.9rem;color:#2E2E2E">{{ link.title }}</div>
           <div style="font-size:0.75rem;color:#777;margin-top:0.1rem">{{ link.desc }}</div>
@@ -159,10 +159,10 @@ const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov
 const growthData = [980, 1050, 1120, 1200, 1180, 1350, 1420, 1380, 1510, 1620, 1750, 1890]
 
 const kpiCards = [
-  { icon: 'store',         label: 'Total UMKM Terdaftar',    value: '12.547',  trend: '+18% YoY', color: '#6A994E', bgTrend: '#EEF6E8', colorTrend: '#6A994E' },
+  { icon: 'store',         label: 'Total UMKM Terdaftar',    value: '12.547',  trend: '+18% YoY', color: '#1F5FE0', bgTrend: '#EAF3FF', colorTrend: '#1F5FE0' },
   { icon: 'verified',      label: 'UMKM Terverifikasi',      value: '3.284',   trend: '+22%',     color: '#3A86FF', bgTrend: '#EBF3FF', colorTrend: '#3A86FF' },
   { icon: 'payments',      label: 'Total Investasi Masuk',   value: 'Rp 152M', trend: '+31%',     color: '#F4A261', bgTrend: '#FFF3E8', colorTrend: '#F4A261' },
-  { icon: 'groups',        label: 'Investor Aktif',          value: '863',     trend: '+15%',     color: '#6A994E', bgTrend: '#EEF6E8', colorTrend: '#6A994E' },
+  { icon: 'groups',        label: 'Investor Aktif',          value: '863',     trend: '+15%',     color: '#1F5FE0', bgTrend: '#EAF3FF', colorTrend: '#1F5FE0' },
 ]
 
 const sektorData = [
@@ -183,7 +183,7 @@ const topKota = [
 ]
 
 const verifikasiStatus = [
-  { icon: 'verified',      label: 'Terverifikasi',    jumlah: 3284, color: '#6A994E', bg: '#EEF6E8' },
+  { icon: 'verified',      label: 'Terverifikasi',    jumlah: 3284, color: '#1F5FE0', bg: '#EAF3FF' },
   { icon: 'pending',       label: 'Menunggu Review',  jumlah: 847,  color: '#F4A261', bg: '#FFF3E8' },
   { icon: 'cancel',        label: 'Ditolak / Revisi', jumlah: 213,  color: '#E76F51', bg: '#FEF2F2' },
 ]

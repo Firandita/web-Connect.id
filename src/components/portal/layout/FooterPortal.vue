@@ -6,7 +6,7 @@
           <span class="material-symbols-rounded">trending_up</span>
           <span>Connect.<strong id="footer-logo-text">id</strong></span>
         </div>
-        <p class="footer-tagline">Platform komunikasi investasi UMKM Jawa Timur berbasis data.</p>
+        <p class="footer-tagline">Platform komunikasi investasi UMKM Indonesia berbasis data.</p>
       </div>
 
       <div class="footer-links-group">
@@ -49,8 +49,8 @@
 <!-- ===== FOOTER STYLE ===== -->
 <style scoped>
 .footer-portal {
-  background: #4a7535;
-  color: #c8ddb8;
+  background: #101B4D;
+  color: #B8CCF0;
   margin-top: auto;
 }
  
@@ -73,17 +73,17 @@
 }
  
 .footer-logo .material-symbols-rounded {
-  color: #a8cc88;
+  color: #6FA3F0;
 }
  
 .footer-logo strong {
-  color: #a8cc88;
+  color: #6FA3F0;
 }
  
 .footer-tagline {
   font-size: 0.85rem;
   line-height: 1.6;
-  color: #9bbf80;
+  color: #8FB0E8;
   max-width: 240px;
 }
  
@@ -108,7 +108,7 @@
 .footer-links-group a,
 .footer-links-group span {
   font-size: 0.875rem;
-  color: #9bbf80;
+  color: #8FB0E8;
   text-decoration: none;
   transition: color 0.15s;
 }
@@ -125,7 +125,7 @@
  
 .footer-bottom p {
   font-size: 0.8rem;
-  color: #7aaa55;
+  color: #5C87CC;
 }
  
 @media (max-width: 768px) {

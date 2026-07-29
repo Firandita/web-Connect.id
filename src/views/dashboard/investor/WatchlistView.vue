@@ -52,7 +52,7 @@
               <span
                 class="font-bold"
                 :style="{
-                  color: umkm.readinessScore >= 80 ? '#6A994E' :
+                  color: umkm.readinessScore >= 80 ? '#1F5FE0' :
                          umkm.readinessScore >= 60 ? '#F4A261' : '#E76F51'
                 }"
               >{{ umkm.readinessScore }}/100</span>
@@ -63,7 +63,7 @@
                   width: umkm.readinessScore + '%',
                   height: '100%',
                   borderRadius: '99px',
-                  background: umkm.readinessScore >= 80 ? '#6A994E' :
+                  background: umkm.readinessScore >= 80 ? '#1F5FE0' :
                               umkm.readinessScore >= 60 ? '#F4A261' : '#E76F51',
                   transition: 'width 0.5s'
                 }"
@@ -98,7 +98,7 @@
     <div v-if="watchlist.length === 0" class="text-center py-20">
       <span
         class="material-symbols-rounded block mb-3"
-        style="font-size:56px; color:#D4EBBC"
+        style="font-size:56px; color:#D3E7FE"
       >bookmarks</span>
       <p class="font-semibold text-gray-500">Watchlist masih kosong</p>
       <p class="text-sm text-gray-400 mt-1">

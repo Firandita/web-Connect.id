@@ -14,7 +14,7 @@
     </div>
 
     <!-- Readiness Score Banner -->
-    <div style="background:linear-gradient(135deg,#4a7535,#6A994E);border-radius:1rem;padding:1.5rem;color:white">
+    <div style="background:linear-gradient(135deg,#16307A,#1F5FE0);border-radius:1rem;padding:1.5rem;color:white">
       <div class="flex flex-col sm:flex-row sm:items-center gap-4">
         <div class="flex-1">
           <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;margin-bottom:0.4rem">Investment Readiness Score</p>
@@ -49,7 +49,7 @@
           <span style="font-size:0.75rem;color:#777">{{ m.label }}</span>
         </div>
         <div style="font-size:1.3rem;font-weight:800;color:#2E2E2E;letter-spacing:-0.02em">{{ m.value }}</div>
-        <div v-if="m.trend" style="font-size:0.72rem;color:#6A994E;margin-top:0.25rem;display:flex;align-items:center;gap:0.25rem">
+        <div v-if="m.trend" style="font-size:0.72rem;color:#1F5FE0;margin-top:0.25rem;display:flex;align-items:center;gap:0.25rem">
           <span class="material-symbols-rounded" style="font-size:0.9rem">trending_up</span>
           {{ m.trend }}
         </div>
@@ -70,7 +70,7 @@
               width: item.pct + '%',
               height: '100%',
               borderRadius: '99px',
-              background: item.pct >= 80 ? '#6A994E' : item.pct >= 50 ? '#F4A261' : '#E76F51',
+              background: item.pct >= 80 ? '#1F5FE0' : item.pct >= 50 ? '#F4A261' : '#E76F51',
               transition: 'width 0.5s'
             }"></div>
           </div>
@@ -88,7 +88,7 @@
           <div v-for="doc in legalDocs" :key="doc.label"
                style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem;border-radius:0.75rem;background:#F7F7F5">
             <div style="display:flex;align-items:center;gap:0.75rem">
-              <span class="material-symbols-rounded" style="font-size:1.25rem;color:#6A994E">{{ doc.icon }}</span>
+              <span class="material-symbols-rounded" style="font-size:1.25rem;color:#1F5FE0">{{ doc.icon }}</span>
               <div>
                 <div style="font-size:0.875rem;font-weight:600;color:#2E2E2E">{{ doc.label }}</div>
                 <div style="font-size:0.72rem;color:#777">{{ doc.desc }}</div>
@@ -110,7 +110,7 @@
       <div class="card p-5">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
           <h3 style="font-weight:700;color:#2E2E2E">Investor yang Tertarik</h3>
-          <RouterLink to="/dashboard/umkm/investor-masuk" style="font-size:0.8rem;color:#6A994E;text-decoration:none">
+          <RouterLink to="/dashboard/umkm/investor-masuk" style="font-size:0.8rem;color:#1F5FE0;text-decoration:none">
             Lihat semua
           </RouterLink>
         </div>
@@ -123,7 +123,7 @@
                style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;border-radius:0.75rem;background:#F7F7F5">
             <div :style="{
               width:'36px', height:'36px', borderRadius:'50%', flexShrink:0,
-              background:'linear-gradient(135deg,#6A994E,#4a7535)',
+              background:'linear-gradient(135deg,#1F5FE0,#22B8E8)',
               color:'white', display:'flex', alignItems:'center', justifyContent:'center',
               fontWeight:700, fontSize:'0.85rem'
             }">{{ inv.nama[0] }}</div>
@@ -198,8 +198,8 @@ const formatRp = (val) => {
 }
 
 const metrics = [
-  { icon: 'payments',        label: 'Omzet/Bulan',  value: formatRp(umkm.omzet),          color: '#6A994E', trend: null },
-  { icon: 'trending_up',     label: 'Laba/Bulan',   value: formatRp(umkm.laba),            color: '#6A994E', trend: '+12% vs bulan lalu' },
+  { icon: 'payments',        label: 'Omzet/Bulan',  value: formatRp(umkm.omzet),          color: '#1F5FE0', trend: null },
+  { icon: 'trending_up',     label: 'Laba/Bulan',   value: formatRp(umkm.laba),            color: '#1F5FE0', trend: '+12% vs bulan lalu' },
   { icon: 'groups',          label: 'Karyawan',      value: umkm.jumlahKaryawan + ' orang', color: '#3A86FF', trend: null },
   { icon: 'account_balance', label: 'Butuh Modal',   value: formatRp(umkm.kebutuhanModal),  color: '#F4A261', trend: null },
 ]

@@ -4,7 +4,7 @@
       <!-- Logo -->
       <!-- Logo -->
 <router-link to="/" class="navbar-logo">
-  <img src="../../../assets/images/logo-Investjatim.png" alt="InvestJatim" class="logo-img" />
+  <img src="../../../assets/images/logo-connectid.png" alt="Connect.id" class="logo-img" />
 </router-link>
 
       <!-- Desktop Menu -->
@@ -88,7 +88,7 @@ const menuOpen = ref(false)
 }
  
 .logo-text strong {
-  color: #6A994E;
+  color: #1F5FE0;
 }
  
 .navbar-links {
@@ -113,8 +113,8 @@ const menuOpen = ref(false)
  
 .nav-link:hover,
 .nav-link.router-link-active {
-  color: #6A994E;
-  background: #EEF6E8;
+  color: #1F5FE0;
+  background: #EAF3FF;
 }
  
 .navbar-cta {
@@ -129,7 +129,7 @@ const menuOpen = ref(false)
   background: none;
   border: none;
   cursor: pointer;
-  color: #6A994E;
+  color: #1F5FE0;
   padding: 0.25rem;
   margin-left: auto;
 }
@@ -159,8 +159,8 @@ const menuOpen = ref(false)
 }
  
 .drawer-link:hover {
-  background: #EEF6E8;
-  color: #6A994E;
+  background: #EAF3FF;
+  color: #1F5FE0;
 }
  
 .drawer-divider {

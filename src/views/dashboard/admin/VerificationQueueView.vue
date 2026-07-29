@@ -43,13 +43,13 @@
             <div
               :style="{
                 width: '36px', height: '36px', borderRadius: '8px', flexShrink: 0,
-                background: item.type === 'investor' ? '#EEF6E8' : '#EBF3FF',
+                background: item.type === 'investor' ? '#EAF3FF' : '#EBF3FF',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
               }"
             >
               <span
                 class="material-symbols-rounded"
-                :style="{ fontSize: '18px', color: item.type === 'investor' ? '#6A994E' : '#3A86FF' }"
+                :style="{ fontSize: '18px', color: item.type === 'investor' ? '#1F5FE0' : '#3A86FF' }"
               >{{ item.type === 'investor' ? 'badge' : 'store' }}</span>
             </div>
             <div class="flex-1 min-w-0">
@@ -76,13 +76,13 @@
               <div
                 :style="{
                   width: '52px', height: '52px', borderRadius: '12px', flexShrink: 0,
-                  background: selected.type === 'investor' ? '#EEF6E8' : '#EBF3FF',
+                  background: selected.type === 'investor' ? '#EAF3FF' : '#EBF3FF',
                   display: 'flex', alignItems: 'center', justifyContent: 'center'
                 }"
               >
                 <span
                   class="material-symbols-rounded"
-                  :style="{ fontSize: '24px', color: selected.type === 'investor' ? '#6A994E' : '#3A86FF' }"
+                  :style="{ fontSize: '24px', color: selected.type === 'investor' ? '#1F5FE0' : '#3A86FF' }"
                 >{{ selected.type === 'investor' ? 'badge' : 'store' }}</span>
               </div>
               <div class="flex-1">

@@ -118,8 +118,8 @@ const search       = ref('')
 const filterRole   = ref('semua')
 const filterStatus = ref('semua')
 
-const roleColor = { umkm: '#6A994E', investor: '#3A86FF', mentor: '#F4A261', admin: '#2E2E2E' }
-const roleBg    = { umkm: '#EEF6E8', investor: '#EBF3FF', mentor: '#FEF3E8', admin: '#F7F7F5' }
+const roleColor = { umkm: '#1F5FE0', investor: '#3A86FF', mentor: '#F4A261', admin: '#2E2E2E' }
+const roleBg    = { umkm: '#EAF3FF', investor: '#EBF3FF', mentor: '#FEF3E8', admin: '#F7F7F5' }
 const roleLabel = { umkm: 'UMKM', investor: 'Investor', mentor: 'Mentor', admin: 'Admin' }
 
 const users = ref([

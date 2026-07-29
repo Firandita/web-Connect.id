@@ -117,7 +117,7 @@
             fontSize:'0.72rem', fontWeight:600, padding:'0.2rem 0.6rem',
             borderRadius:'99px', background: lap.statusBg, color: lap.statusColor
           }">{{ lap.status }}</span>
-          <button style="display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;color:#6A994E;background:none;border:none;cursor:pointer;font-weight:600">
+          <button style="display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;color:#1F5FE0;background:none;border:none;cursor:pointer;font-weight:600">
             <span class="material-symbols-rounded" style="font-size:1rem">download</span>
             Unduh
           </button>
@@ -128,7 +128,7 @@
     <!-- Toast notif -->
     <transition name="toast">
       <div v-if="toastMsg" style="position:fixed;bottom:1.5rem;right:1.5rem;background:#2E2E2E;color:white;padding:0.875rem 1.25rem;border-radius:0.75rem;font-size:0.85rem;display:flex;align-items:center;gap:0.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:100">
-        <span class="material-symbols-rounded" style="font-size:1.1rem;color:#6A994E">check_circle</span>
+        <span class="material-symbols-rounded" style="font-size:1.1rem;color:#1F5FE0">check_circle</span>
         {{ toastMsg }}
       </div>
     </transition>
@@ -158,7 +158,7 @@ function resetFilter() {
 const exportOptions = reactive([
   {
     title: 'Data UMKM Lengkap', format: 'CSV', icon: 'table_chart',
-    color: '#6A994E', bg: '#EEF6E8',
+    color: '#1F5FE0', bg: '#EAF3FF',
     desc: 'Seluruh data profil UMKM termasuk informasi keuangan, legalitas, dan kontak.',
     size: '4.2 MB', rows: '12.547', loading: false,
   },
@@ -182,7 +182,7 @@ const exportOptions = reactive([
   },
   {
     title: 'Laporan Verifikasi', format: 'PDF', icon: 'verified',
-    color: '#6A994E', bg: '#EEF6E8',
+    color: '#1F5FE0', bg: '#EAF3FF',
     desc: 'Status verifikasi seluruh UMKM beserta catatan admin dan mentor.',
     size: '1.8 MB', rows: '4.344', loading: false,
   },
@@ -203,11 +203,11 @@ async function handleExport(exp) {
 }
 
 const riwayatLaporan = [
-  { icon:'table_chart',    nama:'Data UMKM Lengkap Q1 2026',   tanggal:'15 Mei 2026',  size:'4.1 MB',  status:'Selesai', statusBg:'#EEF6E8', statusColor:'#6A994E', color:'#6A994E' },
-  { icon:'picture_as_pdf', nama:'Laporan Investasi April 2026', tanggal:'1 Mei 2026',   size:'2.0 MB',  status:'Selesai', statusBg:'#EEF6E8', statusColor:'#6A994E', color:'#E76F51' },
-  { icon:'bar_chart',      nama:'Analisis Sektor Q4 2025',      tanggal:'10 Jan 2026',  size:'3.5 MB',  status:'Selesai', statusBg:'#EEF6E8', statusColor:'#6A994E', color:'#3A86FF' },
-  { icon:'map',            nama:'Peta Sebaran UMKM 2025',        tanggal:'5 Jan 2026',   size:'1.3 MB',  status:'Selesai', statusBg:'#EEF6E8', statusColor:'#6A994E', color:'#F4A261' },
-  { icon:'dashboard',      nama:'Dashboard Ringkasan 2025',      tanggal:'31 Des 2025',  size:'5.0 MB',  status:'Selesai', statusBg:'#EEF6E8', statusColor:'#6A994E', color:'#3A86FF' },
+  { icon:'table_chart',    nama:'Data UMKM Lengkap Q1 2026',   tanggal:'15 Mei 2026',  size:'4.1 MB',  status:'Selesai', statusBg:'#EAF3FF', statusColor:'#1F5FE0', color:'#1F5FE0' },
+  { icon:'picture_as_pdf', nama:'Laporan Investasi April 2026', tanggal:'1 Mei 2026',   size:'2.0 MB',  status:'Selesai', statusBg:'#EAF3FF', statusColor:'#1F5FE0', color:'#E76F51' },
+  { icon:'bar_chart',      nama:'Analisis Sektor Q4 2025',      tanggal:'10 Jan 2026',  size:'3.5 MB',  status:'Selesai', statusBg:'#EAF3FF', statusColor:'#1F5FE0', color:'#3A86FF' },
+  { icon:'map',            nama:'Peta Sebaran UMKM 2025',        tanggal:'5 Jan 2026',   size:'1.3 MB',  status:'Selesai', statusBg:'#EAF3FF', statusColor:'#1F5FE0', color:'#F4A261' },
+  { icon:'dashboard',      nama:'Dashboard Ringkasan 2025',      tanggal:'31 Des 2025',  size:'5.0 MB',  status:'Selesai', statusBg:'#EAF3FF', statusColor:'#1F5FE0', color:'#3A86FF' },
 ]
 </script>
 

@@ -13,9 +13,9 @@
           @click="selectedMetrik = m.value"
           :style="{
             fontSize:'0.78rem', padding:'0.4rem 0.85rem', borderRadius:'0.5rem',
-            border: '1px solid #6A994E', cursor:'pointer', transition:'all 0.15s',
-            background: selectedMetrik === m.value ? '#6A994E' : 'white',
-            color: selectedMetrik === m.value ? 'white' : '#6A994E',
+            border: '1px solid #1F5FE0', cursor:'pointer', transition:'all 0.15s',
+            background: selectedMetrik === m.value ? '#1F5FE0' : 'white',
+            color: selectedMetrik === m.value ? 'white' : '#1F5FE0',
           }"
         >{{ m.label }}</button>
       </div>
@@ -58,7 +58,7 @@
             }"
           >
             <div style="font-size:0.78rem;font-weight:700;color:#2E2E2E;margin-bottom:0.25rem">{{ kab.nama }}</div>
-            <div style="font-size:0.85rem;font-weight:800;color:#4a7535">{{ formatVal(kab[selectedMetrik]) }}</div>
+            <div style="font-size:0.85rem;font-weight:800;color:#1F5FE0">{{ formatVal(kab[selectedMetrik]) }}</div>
             <div style="font-size:0.65rem;color:#777;margin-top:0.1rem">{{ metrikLabel }}</div>
           </div>
         </div>
@@ -76,9 +76,9 @@
         </div>
 
         <div v-else style="display:flex;flex-direction:column;gap:0.75rem">
-          <div style="padding:1rem;background:#EEF6E8;border-radius:0.75rem;text-align:center">
-            <div style="font-size:2rem;font-weight:800;color:#6A994E">{{ selectedKab.umkm.toLocaleString('id-ID') }}</div>
-            <div style="font-size:0.78rem;color:#4a7535;margin-top:0.2rem">Total UMKM Terdaftar</div>
+          <div style="padding:1rem;background:#EAF3FF;border-radius:0.75rem;text-align:center">
+            <div style="font-size:2rem;font-weight:800;color:#1F5FE0">{{ selectedKab.umkm.toLocaleString('id-ID') }}</div>
+            <div style="font-size:0.78rem;color:#1F5FE0;margin-top:0.2rem">Total UMKM Terdaftar</div>
           </div>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
@@ -96,7 +96,7 @@
             <div style="font-size:0.78rem;font-weight:600;color:#555;margin-bottom:0.5rem">Sektor Dominan</div>
             <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
               <span v-for="s in selectedKab.sektorDominan" :key="s"
-                    style="background:#EEF6E8;color:#6A994E;font-size:0.72rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:99px">
+                    style="background:#EAF3FF;color:#1F5FE0;font-size:0.72rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:99px">
                 {{ s }}
               </span>
             </div>
@@ -138,17 +138,17 @@
                 <span :style="{
                   display:'inline-flex', alignItems:'center', justifyContent:'center',
                   width:'24px', height:'24px', borderRadius:'50%', fontSize:'0.75rem', fontWeight:800,
-                  background: i < 3 ? '#6A994E' : '#e8e8e4',
+                  background: i < 3 ? '#1F5FE0' : '#e8e8e4',
                   color: i < 3 ? 'white' : '#777'
                 }">{{ i+1 }}</span>
               </td>
               <td style="padding:0.875rem 0.75rem;font-weight:600;color:#2E2E2E">{{ kab.nama }}</td>
-              <td style="padding:0.875rem 0.75rem;text-align:right;color:#6A994E;font-weight:700">{{ kab.umkm.toLocaleString('id-ID') }}</td>
+              <td style="padding:0.875rem 0.75rem;text-align:right;color:#1F5FE0;font-weight:700">{{ kab.umkm.toLocaleString('id-ID') }}</td>
               <td style="padding:0.875rem 0.75rem;text-align:right;color:#777">{{ kab.verified.toLocaleString() }}</td>
               <td style="padding:0.875rem 0.75rem;text-align:right;color:#3A86FF;font-weight:600">{{ kab.investor }}</td>
               <td style="padding:0.875rem 0.75rem">
                 <span v-for="s in kab.sektorDominan.slice(0,2)" :key="s"
-                      style="background:#EEF6E8;color:#6A994E;font-size:0.68rem;font-weight:600;padding:0.15rem 0.5rem;border-radius:99px;margin-right:0.3rem">
+                      style="background:#EAF3FF;color:#1F5FE0;font-size:0.68rem;font-weight:600;padding:0.15rem 0.5rem;border-radius:99px;margin-right:0.3rem">
                   {{ s }}
                 </span>
               </td>
@@ -175,7 +175,7 @@ const metrikList = [
 
 const metrikLabel = computed(() => metrikList.find(m => m.value === selectedMetrik.value)?.label)
 
-const heatShades = ['#EEF6E8','#c8ddb8','#a8cc88','#8ab86e','#6A994E','#4a7535']
+const heatShades = ['#EAF3FF','#A8CFFC','#4E92F5','#1F5FE0','#16307A']
 
 const kabupatenData = [
   { nama:'Surabaya',   umkm:2840, verified:980, investor:142, sektorDominan:['Kuliner','Perdagangan'], totalModal:'Rp 12,4M', potensi:'Pusat ekonomi Jatim dengan ekosistem startup dan UMKM digital yang berkembang pesat.' },
@@ -197,11 +197,11 @@ const sortedKabupaten = computed(() => [...kabupatenData].sort((a,b) => b[select
 
 function getHeatColor(val, max) {
   const ratio = val / max
-  if (ratio > 0.8) return '#6A994E'
-  if (ratio > 0.6) return '#8ab86e'
-  if (ratio > 0.4) return '#a8cc88'
-  if (ratio > 0.2) return '#c8ddb8'
-  return '#EEF6E8'
+  if (ratio > 0.8) return '#16307A'
+  if (ratio > 0.6) return '#1F5FE0'
+  if (ratio > 0.4) return '#4E92F5'
+  if (ratio > 0.2) return '#A8CFFC'
+  return '#EAF3FF'
 }
 
 function formatVal(val) {
@@ -209,8 +209,8 @@ function formatVal(val) {
 }
 
 const summaryStats = [
-  { icon:'map',       label:'Kabupaten/Kota',   value:'38',     color:'#6A994E' },
-  { icon:'store',     label:'Total UMKM Jatim',  value:'12.547', color:'#6A994E' },
+  { icon:'map',       label:'Kabupaten/Kota',   value:'38',     color:'#1F5FE0' },
+  { icon:'store',     label:'Total UMKM Jatim',  value:'12.547', color:'#1F5FE0' },
   { icon:'verified',  label:'Rata-rata Verifikasi', value:'31%', color:'#3A86FF' },
   { icon:'groups',    label:'Total Investor',    value:'863',    color:'#F4A261' },
 ]

@@ -53,13 +53,13 @@
             <div
               :style="{
                 width: '36px', height: '36px', borderRadius: '8px', flexShrink: 0,
-                background: item.type === 'investor' ? '#EEF6E8' : '#EBF3FF',
+                background: item.type === 'investor' ? '#EAF3FF' : '#EBF3FF',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
               }"
             >
               <span
                 class="material-symbols-rounded"
-                :style="{ fontSize: '18px', color: item.type === 'investor' ? '#6A994E' : '#3A86FF' }"
+                :style="{ fontSize: '18px', color: item.type === 'investor' ? '#1F5FE0' : '#3A86FF' }"
               >
                 {{ item.type === 'investor' ? 'badge' : 'store' }}
               </span>
@@ -175,10 +175,10 @@
 import { RouterLink } from 'vue-router'
 
 const metrics = [
-  { icon: 'storefront',      label: 'Total UMKM',          value: '1.284', color: '#6A994E', bg: '#EEF6E8', trend: '+12 bulan ini' },
+  { icon: 'storefront',      label: 'Total UMKM',          value: '1.284', color: '#1F5FE0', bg: '#EAF3FF', trend: '+12 bulan ini' },
   { icon: 'people',          label: 'Total Investor',       value: '850',   color: '#3A86FF', bg: '#EBF3FF', trend: '+5 bulan ini' },
   { icon: 'pending_actions', label: 'Menunggu Verifikasi',  value: '18',    color: '#F4A261', bg: '#FEF3E8', trend: null },
-  { icon: 'handshake',       label: 'Koneksi Terjadi',      value: '234',   color: '#6A994E', bg: '#EEF6E8', trend: 'bulan ini' },
+  { icon: 'handshake',       label: 'Koneksi Terjadi',      value: '234',   color: '#1F5FE0', bg: '#EAF3FF', trend: 'bulan ini' },
 ]
 
 const verifikasiQueue = [
@@ -189,24 +189,24 @@ const verifikasiQueue = [
 ]
 
 const umkmStatus = [
-  { label: 'Terverifikasi',  count: 892, color: '#6A994E' },
+  { label: 'Terverifikasi',  count: 892, color: '#1F5FE0' },
   { label: 'Pending Review', count: 247, color: '#F4A261' },
   { label: 'Ditolak',        count: 145, color: '#E76F51' },
 ]
 const totalUmkm = 892 + 247 + 145
 
 const todayActivity = [
-  { icon: 'check_circle', label: 'Verifikasi disetujui', value: '7',  color: '#6A994E' },
+  { icon: 'check_circle', label: 'Verifikasi disetujui', value: '7',  color: '#1F5FE0' },
   { icon: 'cancel',       label: 'Verifikasi ditolak',   value: '2',  color: '#E76F51' },
   { icon: 'person_add',   label: 'Pengguna baru',        value: '14', color: '#3A86FF' },
-  { icon: 'chat',         label: 'Koneksi WA terjadi',   value: '23', color: '#6A994E' },
+  { icon: 'chat',         label: 'Koneksi WA terjadi',   value: '23', color: '#1F5FE0' },
 ]
 
 const activityLog = [
-  { id:1, icon:'check_circle', color:'#6A994E', bg:'#EEF6E8', aktor:'Admin',        aksi:'menyetujui verifikasi KTP Siti Rahayu',   waktu:'5 menit lalu',   type:'approved', badge:'Approved' },
+  { id:1, icon:'check_circle', color:'#1F5FE0', bg:'#EAF3FF', aktor:'Admin',        aksi:'menyetujui verifikasi KTP Siti Rahayu',   waktu:'5 menit lalu',   type:'approved', badge:'Approved' },
   { id:2, icon:'person_add',   color:'#3A86FF', bg:'#EBF3FF', aktor:'Budi Santoso', aksi:'mendaftar sebagai Investor',              waktu:'12 menit lalu',  type:'new',      badge:'Baru' },
-  { id:3, icon:'store',        color:'#6A994E', bg:'#EEF6E8', aktor:'Batik Madura', aksi:'mengunggah dokumen NIB',                  waktu:'25 menit lalu',  type:'new',      badge:'Upload' },
+  { id:3, icon:'store',        color:'#1F5FE0', bg:'#EAF3FF', aktor:'Batik Madura', aksi:'mengunggah dokumen NIB',                  waktu:'25 menit lalu',  type:'new',      badge:'Upload' },
   { id:4, icon:'cancel',       color:'#E76F51', bg:'#FDECEA', aktor:'Admin',        aksi:'menolak verifikasi PIRT karena buram',    waktu:'1 jam lalu',     type:'rejected', badge:'Rejected' },
-  { id:5, icon:'chat',         color:'#6A994E', bg:'#EEF6E8', aktor:'Investor Andi',aksi:'menghubungi Kopi Ijen via WhatsApp',      waktu:'2 jam lalu',     type:'new',      badge:'Koneksi' },
+  { id:5, icon:'chat',         color:'#1F5FE0', bg:'#EAF3FF', aktor:'Investor Andi',aksi:'menghubungi Kopi Ijen via WhatsApp',      waktu:'2 jam lalu',     type:'new',      badge:'Koneksi' },
 ]
 </script>

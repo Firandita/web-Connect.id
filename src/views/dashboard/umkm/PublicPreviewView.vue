@@ -2,10 +2,10 @@
   <div class="space-y-6">
 
     <!-- Header -->
-    <div class="flex items-center justify-between">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
       <div>
-        <h1 class="text-xl font-bold text-gray-800">Preview Publik</h1>
-        <p class="text-sm text-gray-400 mt-0.5">Begini tampilan profil kamu di mata investor</p>
+        <h1 class="text-xl font-bold text-gray-800">Business Intelligence Dashboard</h1>
+        <p class="text-sm text-gray-400 mt-0.5">Begini tampilan profil dan performa bisnismu di mata investor</p>
       </div>
       <div class="flex items-center gap-2">
         <button class="btn-ghost" @click="copyLink">
@@ -22,169 +22,158 @@
     <!-- Banner mode preview -->
     <div class="bg-warning-50 border border-warning-200 rounded-xl p-3 flex items-center gap-3">
       <span class="material-symbols-rounded text-warning-500 flex-shrink-0" style="font-size:18px">visibility</span>
-      <p class="text-sm text-warning-800">Ini adalah tampilan <strong>preview</strong> — begini profil kamu terlihat oleh investor yang sudah login dan terverifikasi.</p>
+      <p class="text-sm text-warning-800">Ini adalah tampilan <strong>preview</strong> — begini profil dan dashboard data bisnismu terlihat oleh investor yang sudah login dan terverifikasi.</p>
     </div>
 
-    <!-- Simulasi halaman publik -->
-    <div class="bg-gray-100 rounded-2xl p-4 lg:p-8">
-      <div class="max-w-3xl mx-auto space-y-4">
+    <!-- Profile Header -->
+    <div class="card p-5">
+      <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+        <div :style="{
+          width:'64px', height:'64px', borderRadius:'14px', flexShrink:0,
+          background: umkm.warna, color:'white',
+          display:'flex', alignItems:'center', justifyContent:'center',
+          fontWeight:800, fontSize:'18px'
+        }">{{ umkm.logo }}</div>
 
-        <!-- Card utama -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
-
-          <!-- Cover / foto utama -->
-          <div class="h-40 bg-gradient-to-br from-brand-600 to-brand-900 relative overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&h=300&fit=crop"
-              alt="Cover"
-              class="w-full h-full object-cover opacity-40"
-            />
-            <div class="absolute inset-0 flex items-end p-5">
-              <div class="flex items-end gap-4">
-                <div class="w-16 h-16 rounded-xl bg-white border-2 border-white shadow-lg overflow-hidden flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=100&h=100&fit=crop" class="w-full h-full object-cover" />
-                </div>
-                <div class="text-white pb-1">
-                  <h2 class="text-lg font-bold">{{ umkm.namaUmkm }}</h2>
-                  <p class="text-sm text-white/70">{{ umkm.alamat }}</p>
-                </div>
-              </div>
-            </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <h1 class="text-xl font-bold text-gray-800">{{ umkm.nama }}</h1>
+            <span :class="umkm.status === 'verified' ? 'badge-verified' : 'badge-pending'">
+              <span class="material-symbols-rounded" style="font-size:12px">
+                {{ umkm.status === 'verified' ? 'verified' : 'pending' }}
+              </span>
+              {{ umkm.status === 'verified' ? 'Terverifikasi' : 'Pending' }}
+            </span>
           </div>
-
-          <!-- Konten -->
-          <div class="p-5 space-y-5">
-
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-brand-50 text-brand-700 text-xs font-medium px-3 py-1 rounded-full capitalize">{{ umkm.sektor }}</span>
-              <span class="bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1 rounded-full">Berdiri {{ umkm.tahunBerdiri }}</span>
-              <span class="bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1 rounded-full">{{ umkm.jumlahKaryawan }} Karyawan</span>
-              <span v-if="umkm.hasNib" class="badge-verified">NIB ✓</span>
-              <span v-if="umkm.hasPirt" class="badge-verified">PIRT ✓</span>
-              <span v-if="umkm.hasHalal" class="badge-verified">Halal ✓</span>
-            </div>
-
-            <!-- Deskripsi -->
-            <div>
-              <h3 class="text-sm font-semibold text-gray-700 mb-2">Tentang Usaha</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">{{ umkm.deskripsi }}</p>
-            </div>
-
-            <!-- Metrik keuangan -->
-            <div>
-              <h3 class="text-sm font-semibold text-gray-700 mb-3">Indikator Keuangan</h3>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div class="bg-gray-50 rounded-xl p-3 text-center">
-                  <p class="text-xs text-gray-400 mb-1">Omzet/Bulan</p>
-                  <p class="text-sm font-bold text-gray-800">{{ formatRp(umkm.omzet) }}</p>
-                </div>
-                <div class="bg-success-50 rounded-xl p-3 text-center">
-                  <p class="text-xs text-gray-400 mb-1">Laba/Bulan</p>
-                  <p class="text-sm font-bold text-success-600">{{ formatRp(umkm.laba) }}</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-3 text-center">
-                  <p class="text-xs text-gray-400 mb-1">Karyawan</p>
-                  <p class="text-sm font-bold text-gray-800">{{ umkm.jumlahKaryawan }} orang</p>
-                </div>
-                <div class="bg-warning-50 rounded-xl p-3 text-center">
-                  <p class="text-xs text-gray-400 mb-1">Butuh Modal</p>
-                  <p class="text-sm font-bold text-warning-700">{{ formatRp(umkm.kebutuhanModal) }}</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Readiness score -->
-            <div class="bg-gradient-to-br from-brand-600 to-brand-900 rounded-xl p-4 text-white">
-              <div class="flex items-center justify-between mb-3">
-                <div>
-                  <p class="text-xs text-white/70">Investment Readiness Score</p>
-                  <div class="flex items-end gap-2 mt-0.5">
-                    <span class="text-3xl font-bold">100</span>
-                    <span class="text-white/60 mb-1">/100</span>
-                    <span class="bg-white/20 text-xs px-2 py-0.5 rounded-full mb-1">Tingkat A — Sangat Siap</span>
-                  </div>
-                </div>
-                <div class="flex gap-2">
-                  <div v-if="umkm.hasNib" class="flex flex-col items-center gap-1">
-                    <div class="w-9 h-9 rounded-full bg-success-500 flex items-center justify-center">
-                      <span class="material-symbols-rounded text-white" style="font-size:18px">check</span>
-                    </div>
-                    <span class="text-xs text-white/70">NIB</span>
-                  </div>
-                  <div v-if="umkm.hasPirt" class="flex flex-col items-center gap-1">
-                    <div class="w-9 h-9 rounded-full bg-success-500 flex items-center justify-center">
-                      <span class="material-symbols-rounded text-white" style="font-size:18px">check</span>
-                    </div>
-                    <span class="text-xs text-white/70">PIRT</span>
-                  </div>
-                  <div v-if="umkm.hasHalal" class="flex flex-col items-center gap-1">
-                    <div class="w-9 h-9 rounded-full bg-success-500 flex items-center justify-center">
-                      <span class="material-symbols-rounded text-white" style="font-size:18px">check</span>
-                    </div>
-                    <span class="text-xs text-white/70">Halal</span>
-                  </div>
-                </div>
-              </div>
-              <p class="text-xs text-white/70">Profil kamu sudah menarik bagi investor. Pertahankan kelengkapan data!</p>
-            </div>
-
-            <!-- Rencana modal -->
-            <div>
-              <h3 class="text-sm font-semibold text-gray-700 mb-2">Rencana Penggunaan Modal</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">{{ umkm.alokasiModal }}</p>
-            </div>
-
-            <!-- Foto produk -->
-            <div>
-              <h3 class="text-sm font-semibold text-gray-700 mb-3">Foto Produk</h3>
-              <div class="grid grid-cols-3 gap-2">
-                <div v-for="photo in productPhotos" :key="photo" class="aspect-square rounded-xl overflow-hidden">
-                  <img :src="photo" class="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Kontak (terkunci jika investor belum verifikasi) -->
-            <div class="border border-gray-100 rounded-xl p-4">
-              <h3 class="text-sm font-semibold text-gray-700 mb-3">Hubungi UMKM</h3>
-              <div class="flex gap-2">
-                <button class="btn-primary flex-1 justify-center">
-                  <span class="material-symbols-rounded" style="font-size:16px">chat</span>
-                  WhatsApp
-                </button>
-                <button v-if="umkm.instagram" class="btn-secondary flex-1 justify-center">
-                  <span class="material-symbols-rounded" style="font-size:16px">photo_camera</span>
-                  Instagram
-                </button>
-              </div>
-              <p class="text-xs text-gray-400 text-center mt-2">Kontak tersedia setelah verifikasi identitas investor</p>
-            </div>
-
+          <div class="flex flex-wrap items-center gap-3 text-sm text-gray-400">
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-rounded" style="font-size:15px">location_on</span>
+              {{ umkm.kota }}
+            </span>
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-rounded" style="font-size:15px">category</span>
+              {{ umkm.sektor }}
+            </span>
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-rounded" style="font-size:15px">calendar_today</span>
+              Berdiri {{ umkm.tahunBerdiri }}
+            </span>
           </div>
+          <p class="text-sm text-gray-500 mt-2 leading-relaxed">{{ umkm.deskripsi }}</p>
         </div>
 
-        <!-- Watermark preview -->
-        <p class="text-center text-xs text-gray-400">— Tampilan ini adalah preview — data sebenarnya ditampilkan setelah login —</p>
+        <!-- Score -->
+        <div class="flex-shrink-0 text-center">
+          <div :style="{
+            width:'80px', height:'80px', borderRadius:'50%',
+            background: `conic-gradient(${scoreColor} ${umkm.readinessScore * 3.6}deg, #F1F5F9 0deg)`,
+            display:'flex', alignItems:'center', justifyContent:'center',
+            position:'relative'
+          }">
+            <div style="width:60px;height:60px;border-radius:50%;background:white;
+                        display:flex;flex-direction:column;align-items:center;justify-content:center">
+              <span :style="{ fontSize:'18px', fontWeight:800, color: scoreColor }">
+                {{ umkm.readinessScore }}
+              </span>
+              <span style="font-size:9px;color:#94a3b8">/100</span>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">Readiness Score</p>
+          <p :style="{ fontSize:'11px', fontWeight:600, color: scoreColor }">{{ scoreLabel }}</p>
+        </div>
+      </div>
+
+      <!-- Legalitas chips -->
+      <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
+        <span v-for="doc in legalChips" :key="doc.label"
+              :class="doc.ok ? 'badge-verified' : 'badge-pending'">
+          <span class="material-symbols-rounded" style="font-size:12px">
+            {{ doc.ok ? 'check_circle' : 'pending' }}
+          </span>
+          {{ doc.label }}
+        </span>
       </div>
     </div>
 
-    <!-- Skor kelengkapan -->
-    <div class="card p-5">
-      <h3 class="text-sm font-semibold text-gray-700 mb-4">Kelengkapan Profil Publik</h3>
-      <div class="space-y-3">
-        <div v-for="item in completionItems" :key="item.label">
-          <div class="flex items-center justify-between mb-1">
+    <!-- Metric Row -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card p-4 text-center" v-for="m in metricCards" :key="m.label">
+        <p class="text-xs text-gray-400 mb-1">{{ m.label }}</p>
+        <p class="text-xl font-bold text-gray-800">{{ m.value }}</p>
+        <p v-if="m.trend" class="text-xs text-success-500 mt-0.5 flex items-center justify-center gap-0.5">
+          <span class="material-symbols-rounded" style="font-size:13px">trending_up</span>
+          {{ m.trend }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+      <!-- Revenue Line Chart -->
+      <div class="lg:col-span-2 card p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-bold text-gray-800">Tren Pendapatan (12 Bulan Terakhir)</h3>
+          <span class="badge-info">2024</span>
+        </div>
+        <RevenueLineChart :data="umkm.omzetBulanan" />
+      </div>
+
+      <!-- Donut -->
+      <div class="card p-5">
+        <h3 class="font-bold text-gray-800 mb-1">Segmen Pelanggan</h3>
+        <p class="text-xs text-gray-400 mb-4">Distribusi pasar saat ini</p>
+        <SectorDonutChart :data="umkm.segmenPelanggan" />
+        <div class="space-y-2 mt-4">
+          <div v-for="(val, key) in umkm.segmenPelanggan" :key="key"
+               class="flex items-center justify-between text-sm">
             <div class="flex items-center gap-2">
-              <span class="material-symbols-rounded" style="font-size:16px" :class="item.done ? 'text-success-500' : 'text-gray-300'">
-                {{ item.done ? 'check_circle' : 'radio_button_unchecked' }}
-              </span>
-              <span class="text-sm text-gray-600">{{ item.label }}</span>
+              <span :style="{ width:'8px', height:'8px', borderRadius:'50%', background: segmenColors[key], display:'inline-block' }" />
+              <span class="text-gray-600 text-xs">{{ segmenLabel[key] }}</span>
             </div>
-            <span class="text-xs font-medium" :class="item.done ? 'text-success-500' : 'text-gray-400'">
-              {{ item.done ? '✓ Lengkap' : 'Belum' }}
+            <span class="font-semibold text-xs text-gray-800">{{ val }}%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kelengkapan Profil -->
+    <div class="card p-5">
+      <h3 class="font-bold text-gray-800 mb-4">Analisis Kelengkapan Profil</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div v-for="dim in dimensions" :key="dim.label">
+          <div class="flex justify-between text-xs mb-1.5">
+            <span class="text-gray-500 flex items-center gap-1">
+              <span class="material-symbols-rounded" style="font-size:14px">{{ dim.icon }}</span>
+              {{ dim.label }}
+            </span>
+            <span class="font-bold" :style="{ color: dim.pct >= 80 ? '#1D9E75' : dim.pct >= 50 ? '#EF9F27' : '#E24B4A' }">
+              {{ dim.pct }}%
             </span>
           </div>
+          <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div :style="{
+              width: dim.pct + '%',
+              background: dim.pct >= 80 ? '#1D9E75' : dim.pct >= 50 ? '#EF9F27' : '#E24B4A',
+              height: '100%', borderRadius: '99px', transition: 'width 0.6s ease'
+            }" />
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-400 mt-4">Lengkapi bagian yang masih rendah skornya melalui menu <router-link to="/dashboard/umkm/profil" class="text-brand-600 font-medium">Edit Profil</router-link> agar dashboard ini semakin menarik bagi investor.</p>
+    </div>
+
+    <!-- Rencana Investasi -->
+    <div class="card p-5">
+      <h3 class="font-bold text-gray-800 mb-4">Rencana Penggunaan Modal</h3>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <div class="flex-1 bg-brand-50 rounded-xl p-4">
+          <p class="text-xs text-brand-600 font-medium mb-1">Total Modal Dibutuhkan</p>
+          <p class="text-2xl font-black text-brand-800">{{ formatRp(umkm.kebutuhanModal) }}</p>
+        </div>
+        <div class="flex-1 bg-gray-50 rounded-xl p-4">
+          <p class="text-xs text-gray-400 font-medium mb-2">Rencana Penggunaan</p>
+          <p class="text-sm text-gray-700 leading-relaxed">{{ umkm.penggunaanModal }}</p>
         </div>
       </div>
     </div>
@@ -201,38 +190,57 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { umkmMock } from '../../../data/umkm.mock.js'
+import RevenueLineChart from '../../../components/dashboard/charts/RevenueLineChart.vue'
+import SectorDonutChart from '../../../components/dashboard/charts/SectorDonutChart.vue'
 
 const umkm = umkmMock[0]
-
-const productPhotos = [
-  'https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=300&h=300&fit=crop',
-  'https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=300&h=300&fit=crop',
-  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop',
-]
-
-const completionItems = [
-  { label: 'Identitas & deskripsi usaha', done: true },
-  { label: 'Data keuangan (omzet & laba)', done: true },
-  { label: 'Dokumen legalitas (NIB, PIRT, Halal)', done: true },
-  { label: 'Foto produk (min. 3)', done: true },
-  { label: 'Rencana penggunaan modal', done: true },
-  { label: 'Kontak WhatsApp aktif', done: true },
-  { label: 'Video profil usaha', done: false },
-]
-
-function formatRp(val) {
-  if (!val) return 'Rp 0'
-  const num = Number(val)
-  if (num >= 1000000) return `Rp ${(num / 1000000).toFixed(0)} Jt`
-  return `Rp ${num.toLocaleString('id-ID')}`
-}
-
 const showToast = ref(false)
 
+const scoreColor = computed(() =>
+  umkm.readinessScore >= 80 ? '#1D9E75' :
+  umkm.readinessScore >= 60 ? '#EF9F27' : '#E24B4A'
+)
+const scoreLabel = computed(() =>
+  umkm.readinessScore >= 80 ? 'Tingkat A — Sangat Siap' :
+  umkm.readinessScore >= 60 ? 'Tingkat B — Siap' : 'Tingkat C — Perlu Perbaikan'
+)
+
+const legalChips = [
+  { label: 'NIB',       ok: umkm.hasNib },
+  { label: 'PIRT',      ok: umkm.hasPirt },
+  { label: 'Halal MUI', ok: umkm.hasHalal },
+]
+
+const metricCards = [
+  { label: 'Omzet Tahunan',      value: formatRp(umkm.omzet * 12), trend: '+12% YoY' },
+  { label: 'Margin Laba Bersih', value: umkm.laba ? ((umkm.laba / umkm.omzet) * 100).toFixed(1) + '%' : '-', trend: null },
+  { label: 'Jumlah Karyawan',    value: umkm.jumlahKaryawan + ' orang', trend: null },
+  { label: 'Berdiri Sejak',      value: umkm.tahunBerdiri, trend: null },
+]
+
+const dimensions = [
+  { label: 'Deskripsi Bisnis', icon: 'description',   pct: umkm.deskripsi ? 95 : 0 },
+  { label: 'Data Keuangan',    icon: 'bar_chart',      pct: umkm.omzet ? 82 : 0 },
+  { label: 'Legalitas',        icon: 'verified',       pct: umkm.hasNib ? (umkm.hasPirt ? (umkm.hasHalal ? 100 : 70) : 50) : 20 },
+  { label: 'Foto & Media',     icon: 'photo_library',  pct: 40 },
+  { label: 'Video Profil',     icon: 'videocam',       pct: 0 },
+  { label: 'Kontak & Sosmed',  icon: 'share',          pct: umkm.instagram ? 90 : 30 },
+]
+
+const segmenColors = { b2c: '#185FA5', b2b: '#1D9E75', ekspor: '#EF9F27' }
+const segmenLabel  = { b2c: 'B2C (Retail)', b2b: 'B2B (Korporat)', ekspor: 'Ekspor' }
+
+function formatRp(val) {
+  if (!val) return '-'
+  if (val >= 1e9) return 'Rp ' + (val / 1e9).toFixed(1) + ' M'
+  if (val >= 1e6) return 'Rp ' + (val / 1e6).toFixed(0) + ' Jt'
+  return 'Rp ' + val.toLocaleString('id-ID')
+}
+
 function copyLink() {
-  navigator.clipboard.writeText(`https://investjatim.id/umkm/${umkm.id}`)
+  navigator.clipboard.writeText(`https://connect.id/umkm/${umkm.id}`)
   showToast.value = true
   setTimeout(() => { showToast.value = false }, 3000)
 }

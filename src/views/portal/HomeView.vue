@@ -9,14 +9,14 @@
         <div class="hero-content">
           <span class="hero-badge">
             <span class="material-symbols-rounded">verified</span>
-            Platform Investasi UMKM Jawa Timur
+            Platform Investasi UMKM Indonesia
           </span>
           <h1 class="hero-title">
             Hubungkan <span class="hero-highlight">UMKM Potensial</span><br />
             dengan Investor Tepat
           </h1>
           <p class="hero-desc">
-            Connect.id mempertemukan pelaku UMKM Jawa Timur dengan investor melalui
+            Connect.id mempertemukan pelaku UMKM lintas provinsi di Indonesia dengan investor melalui 
             dashboard data bisnis yang transparan dan terverifikasi.
           </p>
           <div class="hero-actions">
@@ -59,14 +59,14 @@
             </div>
           </div>
           <div class="hero-card hero-card-mini">
-            <span class="material-symbols-rounded" style="color:#1A6FD4;font-size:1.25rem">trending_up</span>
+            <span class="material-symbols-rounded" style="color:#1D9E75;font-size:1.25rem">trending_up</span>
             <div>
               <div style="font-weight:600;font-size:0.9rem;color:#0f172a">850+ Investor</div>
               <div style="font-size:0.75rem;color:#64748b">Terdaftar & Aktif</div>
             </div>
           </div>
           <div class="hero-card hero-card-mini hero-card-mini-2">
-            <span class="material-symbols-rounded" style="color:#1A6FD4;font-size:1.25rem">handshake</span>
+            <span class="material-symbols-rounded" style="color:#185FA5;font-size:1.25rem">handshake</span>
             <div>
               <div style="font-weight:600;font-size:0.9rem;color:#0f172a">Rp 150 M+</div>
               <div style="font-size:0.75rem;color:#64748b">Total Dana Tersalur</div>
@@ -111,25 +111,25 @@
       <div class="section-inner">
         <div class="section-header">
           <span class="section-badge">Direktori</span>
-          <h2 class="section-title">UMKM Unggulan Jawa Timur</h2>
+          <h2 class="section-title">UMKM Unggulan Indonesia</h2>
           <p class="section-desc">Profil bisnis terverifikasi siap menarik investasi.</p>
         </div>
         <div class="umkm-grid">
           <div class="umkm-card" v-for="u in featuredUmkm" :key="u.id">
             <div class="umkm-card-header">
-              <div class="umkm-avatar">{{ u.namaUmkm?.[0] ?? u.nama?.[0] ?? '?' }}</div>
+              <div class="umkm-avatar">{{ u.namaUmkm?.[0] ?? '?' }}</div>
               <div class="umkm-info">
-                <div class="umkm-name">{{ u.namaUmkm ?? u.nama }}</div>
-                <div class="umkm-sub">{{ u.pemilik ?? u.kota }}</div>
+                <div class="umkm-name">{{ u.namaUmkm }}</div>
+                <div class="umkm-sub">{{ u.pemilik }}</div>
               </div>
-              <span v-if="u.isLegalitasVerified || u.status === 'verified'" class="badge-verified ml-auto">
+              <span v-if="u.isLegalitasVerified" class="badge-verified ml-auto">
                 <span class="material-symbols-rounded" style="font-size:0.9rem">verified</span>
               </span>
               <span v-else class="badge-pending ml-auto">
                 <span class="material-symbols-rounded" style="font-size:0.9rem">pending</span>
               </span>
             </div>
-            <p class="umkm-desc">{{ (u.deskripsi ?? '').slice(0, 100) }}...</p>
+            <p class="umkm-desc">{{ u.deskripsi.slice(0, 100) }}...</p>
             <div class="umkm-tags">
               <span class="tag">{{ u.sektor }}</span>
               <span class="tag">{{ u.jumlahKaryawan }} karyawan</span>
@@ -207,33 +207,32 @@ import { umkmMock } from '../../data/umkm.mock.js'
 const featuredUmkm = computed(() => umkmMock.slice(0, 3))
 
 const formatRp = (val) => {
-  if (!val) return '-'
   if (val >= 1_000_000_000) return `Rp ${(val / 1_000_000_000).toFixed(0)} M`
   if (val >= 1_000_000) return `Rp ${(val / 1_000_000).toFixed(0)} Jt`
   return `Rp ${val.toLocaleString('id-ID')}`
 }
 
 const stats = [
-  { icon: 'store',    value: '12.500+',   label: 'UMKM Terdaftar' },
-  { icon: 'groups',   value: '850+',      label: 'Investor Aktif' },
+  { icon: 'store', value: '12.500+', label: 'UMKM Terdaftar' },
+  { icon: 'groups', value: '850+', label: 'Investor Aktif' },
   { icon: 'payments', value: 'Rp 150 M+', label: 'Dana Tersalur' },
-  { icon: 'verified', value: '3.200+',    label: 'UMKM Terverifikasi' },
+  { icon: 'verified', value: '3.200+', label: 'UMKM Terverifikasi' },
 ]
 
 const steps = [
-  { icon: 'app_registration', title: 'Daftar & Verifikasi',       desc: 'Buat akun sesuai peranmu. Admin akan memverifikasi kelengkapan dokumen legalitas.' },
-  { icon: 'insert_chart',     title: 'Lengkapi Profil Bisnis',    desc: 'UMKM mengisi data keuangan, legalitas, dan media untuk membangun profil investor-ready.' },
-  { icon: 'manage_search',    title: 'Investor Temukan Peluang',  desc: 'Investor menjelajahi direktori, menganalisis data BI dashboard, dan menghubungi UMKM pilihan.' },
-  { icon: 'handshake',        title: 'Koneksi & Investasi',       desc: 'Komunikasi langsung terjadi di platform. Mentor mendampingi proses hingga deal tercapai.' },
+  { icon: 'app_registration', title: 'Daftar & Verifikasi', desc: 'Buat akun sesuai peranmu. Admin akan memverifikasi kelengkapan dokumen legalitas.' },
+  { icon: 'insert_chart', title: 'Lengkapi Profil Bisnis', desc: 'UMKM mengisi data keuangan, legalitas, dan media untuk membangun profil investor-ready.' },
+  { icon: 'manage_search', title: 'Investor Temukan Peluang', desc: 'Investor menjelajahi direktori, menganalisis data BI dashboard, dan menghubungi UMKM pilihan.' },
+  { icon: 'handshake', title: 'Koneksi & Investasi', desc: 'Komunikasi langsung terjadi di platform. Mentor mendampingi proses hingga deal tercapai.' },
 ]
 
 const sectors = [
-  { icon: 'restaurant',              name: 'Kuliner',      count: 4820 },
-  { icon: 'checkroom',               name: 'Fashion',      count: 2150 },
-  { icon: 'agriculture',             name: 'Pertanian',    count: 1890 },
-  { icon: 'precision_manufacturing', name: 'Manufaktur',   count: 1340 },
-  { icon: 'storefront',              name: 'Perdagangan',  count: 1620 },
-  { icon: 'spa',                     name: 'Kecantikan',   count: 680  },
+  { icon: 'restaurant', name: 'Kuliner', count: 4820 },
+  { icon: 'checkroom', name: 'Fashion', count: 2150 },
+  { icon: 'agriculture', name: 'Pertanian', count: 1890 },
+  { icon: 'precision_manufacturing', name: 'Manufaktur', count: 1340 },
+  { icon: 'storefront', name: 'Perdagangan', count: 1620 },
+  { icon: 'spa', name: 'Kecantikan', count: 680 },
 ]
 </script>
 
@@ -243,13 +242,13 @@ const sectors = [
   display: flex;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
-  background: #F0F6FF;
+  background: #F7F7F5;
 }
 
-/* ── HERO ───────────────────────────────────── */
+/* HERO */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #EBF3FF 0%, #F0F6FF 50%, #E3EDFF 100%);
+  background: linear-gradient(135deg, #EAF3FF 0%, #F3F8FF 50%, #EAF3FF 100%);
   overflow: hidden;
   padding: 5rem 0 4rem;
 }
@@ -257,9 +256,8 @@ const sectors = [
 .hero-bg-pattern {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(26,111,212,0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(13,79,163,0.05) 0%, transparent 40%);
+  background-image: radial-gradient(circle at 20% 50%, rgba(31,95,224,0.07) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(34,184,232,0.06) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -278,39 +276,45 @@ const sectors = [
   align-items: center;
   gap: 0.4rem;
   background: white;
-  color: #1A6FD4;
+  color: #1F5FE0;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.4rem 0.9rem;
   border-radius: 99px;
-  border: 1px solid #9DC4FF;
+  border: 1px solid #c5ddb0;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 4px rgba(26,111,212,0.1);
+  box-shadow: 0 1px 4px rgba(106,153,78,0.1);
 }
+
 .hero-badge .material-symbols-rounded { font-size: 1rem; }
 
 .hero-title {
   font-size: 2.75rem;
   font-weight: 800;
-  color: #0A3570;
+  color: #2E2E2E;
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
 }
 
 .hero-highlight {
-  color: #1A6FD4;
+  color: #1F5FE0;
+  position: relative;
 }
 
 .hero-desc {
   font-size: 1rem;
-  color: #4A6080;
+  color: #555;
   line-height: 1.7;
   max-width: 480px;
   margin-bottom: 2rem;
 }
 
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
 .hero-btn {
   display: inline-flex;
@@ -321,17 +325,24 @@ const sectors = [
 }
 
 /* Hero Visual */
-.hero-visual { position: relative; height: 320px; }
+.hero-visual {
+  position: relative;
+  height: 320px;
+}
 
 .hero-card {
   position: absolute;
   background: white;
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(26,111,212,0.12);
-  border: 1px solid #C5DCFF;
+  box-shadow: 0 8px 32px rgba(106,153,78,0.12);
+  border: 1px solid #ddeece;
 }
 
-.hero-card-main { width: 100%; padding: 1.25rem; top: 20px; }
+.hero-card-main {
+  width: 100%;
+  padding: 1.25rem;
+  top: 20px;
+}
 
 .hc-header {
   display: flex;
@@ -342,27 +353,27 @@ const sectors = [
 
 .hc-icon {
   font-size: 1.5rem;
-  color: #1A6FD4;
-  background: #EBF3FF;
+  color: #1F5FE0;
+  background: #EAF3FF;
   padding: 0.5rem;
   border-radius: 0.6rem;
 }
 
-.hc-name { font-weight: 700; font-size: 0.95rem; color: #0A3570; }
-.hc-sub  { font-size: 0.75rem; color: #7A9BBF; }
+.hc-name { font-weight: 700; font-size: 0.95rem; color: #2E2E2E; }
+.hc-sub { font-size: 0.75rem; color: #888; }
 
 .hc-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
-  background: #F0F6FF;
+  background: #F7F7F5;
   border-radius: 0.75rem;
   padding: 0.875rem;
 }
 
 .hc-stat { text-align: center; }
-.hc-stat-val { display: block; font-weight: 700; font-size: 0.95rem; color: #1A6FD4; }
-.hc-stat-lbl { display: block; font-size: 0.7rem; color: #9BB5CF; margin-top: 0.2rem; }
+.hc-stat-val { display: block; font-weight: 700; font-size: 0.95rem; color: #1F5FE0; }
+.hc-stat-lbl { display: block; font-size: 0.7rem; color: #aaa; margin-top: 0.2rem; }
 
 .hero-card-mini {
   display: flex;
@@ -373,11 +384,16 @@ const sectors = [
   bottom: 30px;
   left: -20px;
 }
-.hero-card-mini-2 { left: auto; right: -10px; bottom: 80px; }
 
-/* ── STATS ──────────────────────────────────── */
+.hero-card-mini-2 {
+  left: auto;
+  right: -10px;
+  bottom: 80px;
+}
+
+/* STATS */
 .stats-section {
-  background: linear-gradient(135deg, #1A6FD4 0%, #0D4FA3 100%);
+  background: #1F5FE0;
   padding: 2.5rem 1.5rem;
 }
 
@@ -389,11 +405,14 @@ const sectors = [
   gap: 1rem;
 }
 
-.stat-item { text-align: center; padding: 1.5rem 1rem; }
+.stat-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
 
 .stat-icon {
   font-size: 1.75rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.5);
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -407,19 +426,26 @@ const sectors = [
 
 .stat-lbl {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.65);
   margin-top: 0.25rem;
 }
 
-/* ── SECTIONS ───────────────────────────────── */
-.section-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+/* SECTIONS */
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-.section-header { text-align: center; margin-bottom: 3rem; }
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
 .section-badge {
   display: inline-block;
-  background: #EBF3FF;
-  color: #1A6FD4;
+  background: #EAF3FF;
+  color: #1F5FE0;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -432,21 +458,24 @@ const sectors = [
 .section-title {
   font-size: 1.875rem;
   font-weight: 800;
-  color: #0A3570;
+  color: #2E2E2E;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
 }
 
 .section-desc {
   font-size: 0.95rem;
-  color: #6A8BAA;
+  color: #777;
   max-width: 480px;
   margin: 0 auto;
   line-height: 1.7;
 }
 
-/* ── HOW IT WORKS ───────────────────────────── */
-.how-section { padding: 5rem 1.5rem; background: white; }
+/* HOW IT WORKS */
+.how-section {
+  padding: 5rem 1.5rem;
+  background: white;
+}
 
 .steps-grid {
   display: grid;
@@ -455,22 +484,23 @@ const sectors = [
 }
 
 .step-card {
-  background: #F0F6FF;
+  background: #F7F7F5;
   border-radius: 1rem;
   padding: 1.75rem 1.25rem;
-  border: 1px solid #C5DCFF;
+  border: 1px solid #e8e8e4;
+  position: relative;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .step-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(26,111,212,0.12);
+  box-shadow: 0 8px 24px rgba(106,153,78,0.1);
 }
 
 .step-num {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #9DC4FF;
+  color: #A8CFFC;
   letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -478,16 +508,29 @@ const sectors = [
 
 .step-icon {
   font-size: 1.75rem;
-  color: #1A6FD4;
+  color: #1F5FE0;
   display: block;
   margin-bottom: 1rem;
 }
 
-.step-title { font-size: 0.95rem; font-weight: 700; color: #0A3570; margin-bottom: 0.5rem; }
-.step-desc  { font-size: 0.82rem; color: #6A8BAA; line-height: 1.6; }
+.step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2E2E2E;
+  margin-bottom: 0.5rem;
+}
 
-/* ── FEATURED UMKM ──────────────────────────── */
-.featured-section { padding: 5rem 1.5rem; background: #F0F6FF; }
+.step-desc {
+  font-size: 0.82rem;
+  color: #777;
+  line-height: 1.6;
+}
+
+/* FEATURED UMKM */
+.featured-section {
+  padding: 5rem 1.5rem;
+  background: #F7F7F5;
+}
 
 .umkm-grid {
   display: grid;
@@ -497,7 +540,7 @@ const sectors = [
 
 .umkm-card {
   background: white;
-  border: 1px solid #C5DCFF;
+  border: 1px solid #e8e8e4;
   border-radius: 1rem;
   padding: 1.5rem;
   display: flex;
@@ -507,17 +550,21 @@ const sectors = [
 }
 
 .umkm-card:hover {
-  box-shadow: 0 8px 28px rgba(26,111,212,0.12);
+  box-shadow: 0 8px 28px rgba(106,153,78,0.1);
   transform: translateY(-3px);
 }
 
-.umkm-card-header { display: flex; align-items: center; gap: 0.75rem; }
+.umkm-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
 .umkm-avatar {
   width: 44px;
   height: 44px;
   border-radius: 0.75rem;
-  background: linear-gradient(135deg, #1A6FD4, #0D4FA3);
+  background: linear-gradient(135deg, #1F5FE0, #22B8E8);
   color: white;
   font-size: 1.2rem;
   font-weight: 700;
@@ -527,33 +574,44 @@ const sectors = [
   flex-shrink: 0;
 }
 
-.umkm-name { font-weight: 700; font-size: 0.9rem; color: #0A3570; }
-.umkm-sub  { font-size: 0.75rem; color: #7A9BBF; }
-.umkm-desc { font-size: 0.82rem; color: #6A8BAA; line-height: 1.6; flex: 1; }
+.umkm-name { font-weight: 700; font-size: 0.9rem; color: #2E2E2E; }
+.umkm-sub { font-size: 0.75rem; color: #888; }
 
-.umkm-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.umkm-desc {
+  font-size: 0.82rem;
+  color: #777;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.umkm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
 
 .tag {
-  background: #EBF3FF;
-  color: #1A6FD4;
+  background: #EAF3FF;
+  color: #1F5FE0;
   font-size: 0.72rem;
   font-weight: 600;
   padding: 0.2rem 0.6rem;
   border-radius: 99px;
+  text-transform: capitalize;
 }
 
 .umkm-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: #F0F6FF;
+  background: #F7F7F5;
   border-radius: 0.75rem;
   padding: 0.75rem;
   gap: 0.5rem;
 }
 
 .metric { text-align: center; }
-.metric-val { display: block; font-weight: 700; font-size: 0.875rem; color: #1A6FD4; }
-.metric-lbl { display: block; font-size: 0.68rem; color: #9BB5CF; margin-top: 0.15rem; }
+.metric-val { display: block; font-weight: 700; font-size: 0.875rem; color: #1F5FE0; }
+.metric-lbl { display: block; font-size: 0.68rem; color: #aaa; margin-top: 0.15rem; }
 
 .umkm-btn {
   display: flex;
@@ -564,8 +622,11 @@ const sectors = [
   padding: 0.6rem 1rem;
 }
 
-/* ── SECTORS ────────────────────────────────── */
-.sector-section { padding: 5rem 1.5rem; background: white; }
+/* SECTORS */
+.sector-section {
+  padding: 5rem 1.5rem;
+  background: white;
+}
 
 .sector-grid {
   display: grid;
@@ -575,8 +636,8 @@ const sectors = [
 
 .sector-card {
   text-align: center;
-  background: #F0F6FF;
-  border: 1px solid #C5DCFF;
+  background: #F7F7F5;
+  border: 1px solid #e8e8e4;
   border-radius: 1rem;
   padding: 1.5rem 1rem;
   transition: all 0.2s;
@@ -584,33 +645,45 @@ const sectors = [
 }
 
 .sector-card:hover {
-  background: #EBF3FF;
-  border-color: #1A6FD4;
+  background: #EAF3FF;
+  border-color: #1F5FE0;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(26,111,212,0.1);
 }
 
 .sector-icon {
   font-size: 2rem;
-  color: #1A6FD4;
+  color: #1F5FE0;
   display: block;
   margin-bottom: 0.75rem;
 }
 
-.sector-name { font-weight: 700; font-size: 0.85rem; color: #0A3570; margin-bottom: 0.25rem; }
-.sector-count { font-size: 0.75rem; color: #7A9BBF; }
+.sector-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #2E2E2E;
+  margin-bottom: 0.25rem;
+}
 
-/* ── CTA ────────────────────────────────────── */
+.sector-count {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* CTA */
 .cta-section {
-  background: linear-gradient(135deg, #1A6FD4 0%, #0A3570 100%);
+  background: linear-gradient(135deg, #16307A 0%, #1F5FE0 100%);
   padding: 5rem 1.5rem;
 }
 
-.cta-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+.cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
 
 .cta-icon {
   font-size: 3rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.4);
   display: block;
   margin-bottom: 1.5rem;
 }
@@ -625,16 +698,21 @@ const sectors = [
 
 .cta-desc {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.7);
   line-height: 1.7;
   margin-bottom: 2rem;
 }
 
-.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 .cta-btn-primary {
   background: white;
-  color: #1A6FD4;
+  color: #1F5FE0;
   font-size: 0.9rem;
   font-weight: 700;
   padding: 0.75rem 1.75rem;
@@ -642,7 +720,11 @@ const sectors = [
   text-decoration: none;
   transition: all 0.15s;
 }
-.cta-btn-primary:hover { background: #EBF3FF; transform: translateY(-1px); }
+
+.cta-btn-primary:hover {
+  background: #EAF3FF;
+  transform: translateY(-1px);
+}
 
 .cta-btn-secondary {
   color: rgba(255,255,255,0.85);
@@ -654,25 +736,29 @@ const sectors = [
   text-decoration: none;
   transition: all 0.15s;
 }
-.cta-btn-secondary:hover { background: rgba(255,255,255,0.1); color: white; }
 
-.ml-auto   { margin-left: auto; }
+.cta-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.ml-auto { margin-left: auto; }
 .text-center { text-align: center; }
-.mt-10     { margin-top: 2.5rem; }
+.mt-10 { margin-top: 2.5rem; }
 
-/* ── RESPONSIVE ─────────────────────────────── */
+/* Responsive */
 @media (max-width: 1024px) {
   .sector-grid { grid-template-columns: repeat(3, 1fr); }
-  .steps-grid  { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .hero-inner  { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
   .hero-visual { display: none; }
-  .hero-title  { font-size: 2rem; }
+  .hero-title { font-size: 2rem; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .umkm-grid   { grid-template-columns: 1fr; }
-  .steps-grid  { grid-template-columns: 1fr; }
+  .umkm-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
   .sector-grid { grid-template-columns: repeat(2, 1fr); }
   .cta-actions { flex-direction: column; align-items: center; }
 }

@@ -104,21 +104,21 @@ const search     = ref('')
 const filterType = ref('semua')
 
 const stats = [
-  { icon:'check_circle', label:'Verifikasi Hari Ini', value:'9',  color:'#6A994E' },
+  { icon:'check_circle', label:'Verifikasi Hari Ini', value:'9',  color:'#1F5FE0' },
   { icon:'person_add',   label:'Pendaftar Baru',      value:'14', color:'#3A86FF' },
-  { icon:'chat',         label:'Koneksi WA',          value:'23', color:'#6A994E' },
+  { icon:'chat',         label:'Koneksi WA',          value:'23', color:'#1F5FE0' },
   { icon:'cancel',       label:'Tolak Verifikasi',    value:'2',  color:'#E76F51' },
 ]
 
 const allLogs = ref([
-  { id:1,  icon:'check_circle', color:'#6A994E', bg:'#EEF6E8', type:'verifikasi', aktor:'Admin',         aksi:'menyetujui KTP Siti Rahayu',                  waktu:'5 menit lalu',    detail: null },
+  { id:1,  icon:'check_circle', color:'#1F5FE0', bg:'#EAF3FF', type:'verifikasi', aktor:'Admin',         aksi:'menyetujui KTP Siti Rahayu',                  waktu:'5 menit lalu',    detail: null },
   { id:2,  icon:'person_add',   color:'#3A86FF', bg:'#EBF3FF', type:'daftar',     aktor:'Budi Santoso',  aksi:'mendaftar sebagai Investor',                  waktu:'12 menit lalu',   detail: 'Email: budi@demo.com' },
-  { id:3,  icon:'chat',         color:'#6A994E', bg:'#EEF6E8', type:'koneksi',    aktor:'Andi Wijaya',   aksi:'menghubungi Kopi Ijen via WhatsApp',           waktu:'18 menit lalu',   detail: null },
+  { id:3,  icon:'chat',         color:'#1F5FE0', bg:'#EAF3FF', type:'koneksi',    aktor:'Andi Wijaya',   aksi:'menghubungi Kopi Ijen via WhatsApp',           waktu:'18 menit lalu',   detail: null },
   { id:4,  icon:'upload_file',  color:'#3A86FF', bg:'#EBF3FF', type:'verifikasi', aktor:'Batik Madura',  aksi:'mengunggah dokumen NIB untuk review',         waktu:'30 menit lalu',   detail: 'Dokumen: NIB-2024.pdf' },
   { id:5,  icon:'login',        color:'#2E2E2E', bg:'#F7F7F5', type:'login',      aktor:'Admin',         aksi:'masuk ke panel admin',                        waktu:'45 menit lalu',   detail: null },
   { id:6,  icon:'cancel',       color:'#E76F51', bg:'#FDECEA', type:'verifikasi', aktor:'Admin',         aksi:'menolak PIRT Kopi Bromo — foto buram',        waktu:'1 jam lalu',      detail: 'Alasan: Dokumen tidak terbaca' },
-  { id:7,  icon:'chat',         color:'#6A994E', bg:'#EEF6E8', type:'koneksi',    aktor:'Siti Rahayu',   aksi:'menghubungi Batik Arjuna via WhatsApp',       waktu:'2 jam lalu',      detail: null },
-  { id:8,  icon:'check_circle', color:'#6A994E', bg:'#EEF6E8', type:'verifikasi', aktor:'Admin',         aksi:'menyetujui NIB Konveksi Makmur',              waktu:'3 jam lalu',      detail: null },
+  { id:7,  icon:'chat',         color:'#1F5FE0', bg:'#EAF3FF', type:'koneksi',    aktor:'Siti Rahayu',   aksi:'menghubungi Batik Arjuna via WhatsApp',       waktu:'2 jam lalu',      detail: null },
+  { id:8,  icon:'check_circle', color:'#1F5FE0', bg:'#EAF3FF', type:'verifikasi', aktor:'Admin',         aksi:'menyetujui NIB Konveksi Makmur',              waktu:'3 jam lalu',      detail: null },
   { id:9,  icon:'person_add',   color:'#3A86FF', bg:'#EBF3FF', type:'daftar',     aktor:'Kopi Bromo',    aksi:'mendaftar sebagai UMKM',                      waktu:'4 jam lalu',      detail: 'Sektor: Pertanian · Kota: Malang' },
   { id:10, icon:'bookmarks',    color:'#F4A261', bg:'#FEF3E8', type:'koneksi',    aktor:'Budi Santoso',  aksi:'menambahkan Sambal Bu Rini ke watchlist',      waktu:'5 jam lalu',      detail: null },
 ])
